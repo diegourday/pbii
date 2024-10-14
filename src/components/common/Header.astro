@@ -1,0 +1,25 @@
+---
+import Logo from "./Logo.astro";
+---
+
+<header id="header-nav" class="fixed top-0 z-40 w-full px-6 py-3">
+  <div class="mx-auto flex max-w-[1200px] items-center justify-between">
+    <Logo class="h-8 text-white" />
+
+    <nav class="flex flex-row gap-x-10 text-sm text-white opacity-80">
+      <a class="text-white" href="/">Inicio</a>
+      <a class="text-white" href="/about">Nosotros</a>
+      <a class="text-white" href="/contact">Proyectos</a>
+      <a class="text-white" href="/contact">Testimonios</a>
+      <a class="text-white" href="/contact">Contáctanos</a>
+    </nav>
+  </div>
+</header>
+
+<style>
+  #header-nav {
+    animation: blur linear both;
+    animation-timeline: scroll();
+    animation-range: 0 500px;
+  }
+</style>

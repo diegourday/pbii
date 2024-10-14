@@ -1,0 +1,74 @@
+---
+import MapPin from "@/icons/tabler/MapPin";
+import WhatsApp from "@/icons/tabler/WhatsApp";
+import Instagram from "@/icons/tabler/Instagram";
+import Facebook from "@/icons/tabler/Facebook";
+import Mail from "@/icons/tabler/Mail";
+---
+
+<section
+  id="informacion"
+  class="mt-28 grid h-[500px] w-full grid-cols-[2fr_1fr] bg-primary"
+>
+  <div>
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1935.2142575144203!2d-75.76533342354054!3d-14.05185483913632!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9110e3c55d585f5b%3A0x925b85a8d45daea2!2sInversiones%20Inmobiliarias%20PB%20S.A.C.!5e0!3m2!1ses-419!2spe!4v1728894294812!5m2!1ses-419!2spe"
+      width="100%"
+      height="100%"
+      style="border:0;"
+      allowfullscreen=""
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"></iframe>
+  </div>
+
+  <div class="bg-primary p-10 text-white">
+    <h2 class="mb-6 text-center text-2xl font-semibold">
+      Información de contacto
+    </h2>
+    <div class="mt-4 flex flex-col items-start gap-3">
+      <a
+        href="https://facebook.com/Urb.LaReserva"
+        target="_blank"
+        class="contact-item"
+      >
+        <Facebook className="size-6" />
+        La Reserva
+      </a>
+      <a href="https://wa.me/944686742" class="contact-item">
+        <WhatsApp className="size-6" />
+        944 686 742
+      </a>
+      <a
+        href="https://instagram.com/pbinmobiliariaica"
+        target="_blank"
+        class="contact-item"
+      >
+        <Instagram className="size-6" />
+        pbinmobiliariaica
+      </a>
+      <a href="https://wa.me/944686742" class="contact-item">
+        <MapPin className="size-6" /> Las Casuarinas 450B, Ica 11004
+      </a>
+      <a href="mailto:pbinversionesinmobiliarias.com" class="contact-item">
+        <Mail className="size-6" />
+        pbinversionesinmobiliarias.com
+      </a>
+    </div>
+  </div>
+</section>
+
+<style>
+  .contact-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 16px 12px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    &:hover {
+      background-color: rgba(255, 255, 255, 1);
+      color: #222;
+    }
+  }
+</style>

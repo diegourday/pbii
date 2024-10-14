@@ -1,0 +1,31 @@
+---
+import Button from "@/components/ui/Button.astro";
+import Shield from "@/icons/tabler/Shield";
+import Calendar from "@/icons/tabler/Calendar";
+---
+
+<div
+  class="h-[600px] bg-[url('/la-reserva-portico.jpg')] bg-cover bg-fixed bg-bottom px-20"
+>
+  <div
+    class="mr-auto flex h-full max-w-[350px] flex-col justify-center bg-primary/95 px-8"
+  >
+    <Shield
+      className="mx-auto mb-2 size-20 animate-[pulse_3s_ease-in-out_infinite] text-white"
+    />
+    <h2 class="mb-4 text-center text-3xl font-semibold text-white">
+      Vive seguro
+    </h2>
+    <p class="mb-6 text-white">
+      La Reserva cuenta con un sistema de seguridad integral para que tú y tu
+      familia vivan tranquilos.
+    </p>
+    <a
+      href="#contactanos"
+      class="button-secondary flex items-center justify-center gap-1"
+    >
+      <Calendar className="size-6" />
+      Agenda tu Visita
+    </a>
+  </div>
+</div>
