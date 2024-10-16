@@ -1,0 +1,35 @@
+---
+import Shield from "@/icons/Shield";
+import Calendar from "@/icons/Calendar";
+---
+
+<section
+  class="mt-32 bg-cover bg-fixed bg-bottom md:h-[600px] md:bg-[url('/la-reserva-ii/security.jpg')] md:px-20"
+>
+  <div
+    class="mr-auto flex flex-col justify-center bg-primary/95 px-8 py-16 md:h-full md:max-w-[350px]"
+  >
+    <Shield
+      className="mx-auto mb-4 size-20 animate-[pulse_3s_ease-in-out_infinite] text-white"
+    />
+    <h2 class="mb-2 text-center text-2xl font-semibold text-white">
+      Vive seguro
+    </h2>
+    <p class="mb-6 text-white">
+      La Reserva II cuenta con un sistema de seguridad integral para que tú y tu
+      familia vivan tranquilos.
+    </p>
+    <a
+      href="#contactanos"
+      class="button-secondary mx-2 flex items-center justify-center gap-1"
+    >
+      <Calendar className="size-6" />
+      Agendar Visita
+    </a>
+  </div>
+  <img
+    class="h-64 object-cover object-center md:hidden"
+    src="/la-reserva-portico.jpg"
+    alt="Portico de La Reserva - PB Inversiones Inmobiliarias"
+  />
+</section>

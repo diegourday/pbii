@@ -17,6 +17,8 @@ export default function Explore() {
     document.body.style.paddingRight = "0px";
   };
 
+  console.log("js test");
+
   return (
     <>
       <div className="mx-auto max-w-[1200px] px-6 pt-32">

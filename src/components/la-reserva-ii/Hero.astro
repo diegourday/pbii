@@ -5,11 +5,16 @@ import LaReservaII from "../logos/LaReservaII.astro";
 <section
   class="relative grid h-dvh w-full place-content-center bg-black/20 transition-all duration-300"
 >
-  <img
-    class="absolute -z-10 h-full w-full object-cover object-center"
-    src="/la-reserva-ninos.jpg"
-    alt=""
-  />
+  <video
+    autoplay
+    loop
+    muted
+    playsinline
+    preload="metadata"
+    class="absolute -z-10 h-full w-full object-cover"
+  >
+    <source src="/la-reserva-ii.mp4" type="video/mp4" />
+  </video>
   <div class="m-auto grid justify-items-center gap-6">
     <LaReservaII class="w-3/4 text-white md:w-96" />
     <a href="#info" class="button-primary">Conocer más</a>
