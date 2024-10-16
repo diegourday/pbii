@@ -1,25 +1,33 @@
 ---
-import Handshake from "@/icons/tabler/Handshake";
+import Handshake from "@/icons/Handshake";
 ---
 
-<div
-  class="mt-20 flex h-[500px] bg-[url('/testimony-bg.jpg')] bg-cover bg-fixed bg-bottom px-20"
+<section
+  class="mt-32 flex flex-col bg-[url('/testimony-bg.jpg')] bg-cover bg-fixed bg-center md:h-[500px] md:px-20"
 >
   <div
-    class="m-auto flex max-w-[600px] flex-col justify-center bg-primary/95 px-8 py-4"
+    class="m-auto flex flex-col justify-center bg-primary/95 px-8 py-16 text-center text-white md:max-w-[600px] md:py-4"
   >
-    <Handshake id="cora" className="mx-auto mb-2 size-20 text-white" />
-    <h2 class="mb-4 text-center text-3xl font-semibold text-white">
-      Una inversión confiable
-    </h2>
-    <p class="mb-6 text-center font-light text-white">
-      “Compré un lote en una zona en crecimiento y fue una excelente decisión.
-      El proceso fue fluido, el vendedor fue transparente y el terreno tenía
-      todas las facilidades que necesitaba. <br /> Ahora, estoy construyendo mi casa
-      de sueños y no puedo estar más contento. La inversión valió la pena”
+    <Handshake id="cora" className="mx-auto mb-2 size-20" />
+    <h2 class="mb-2 text-2xl font-semibold">Una inversión segura</h2>
+    <p class="mb-4 font-light">
+      “Compré un lote en una zona en crecimiento y fue una <strong
+        class="font-semibold">excelente decisión</strong
+      >. El proceso fue fluido, el vendedor fue transparente y el terreno tenía
+      <strong class="font-semibold">todas las facilidades</strong> que necesitaba.
+      <br /> Ahora, estoy construyendo <strong class="font-semibold"
+        >la casa de mis sueños</strong
+      > y no puedo estar más contento. <br />
+      <strong class="font-semibold italic">La inversión valió la pena</strong>”
     </p>
+    <p class="font-medium">- Propietario -</p>
   </div>
-</div>
+  <!-- <img
+    class="h-64 object-cover object-center md:hidden"
+    src="/testimony-bg.jpg"
+    alt="Hojas de La Reserva - PB Inversiones Inmobiliarias"
+  /> -->
+</section>
 
 <style>
   #cora {

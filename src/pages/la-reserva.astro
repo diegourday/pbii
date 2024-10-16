@@ -2,12 +2,11 @@
 import Hero from "@/components/la-reserva/Hero.astro";
 import Info from "@/components/la-reserva/Info.astro";
 import Benefits from "@/components/la-reserva/Benefits.tsx";
-import Sketch from "@/components/la-reserva/Sketch.tsx";
-import Form from "@/components/common/Form.astro";
-import Contact from "@/components/common/Contact.astro";
+import Explore from "@/components/la-reserva/Explore";
 import Layout from "@/layouts/Layout.astro";
 import Security from "@/components/la-reserva/Security.astro";
 import Testimony from "@/components/la-reserva/Testimony.astro";
+import Gallery from "@/components/la-reserva/Gallery.astro";
 ---
 
 <Layout
@@ -20,8 +19,7 @@ import Testimony from "@/components/la-reserva/Testimony.astro";
     <Security />
     <Benefits client:idle />
     <Testimony />
-    <Sketch client:idle />
-    <Contact />
-    <Form />
+    <Explore client:idle />
+    <Gallery />
   </main>
 </Layout>

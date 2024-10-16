@@ -1,14 +1,42 @@
 ---
-import Logo from "./Logo.astro";
+import Facebook from "@/icons/Facebook";
+import LogoII from "./Logo-II.astro";
+import Instagram from "@/icons/Instagram";
+import WhatsApp from "@/icons/WhatsApp";
 ---
 
-<footer class="mx-auto bg-primary py-5">
+<footer>
   <div
-    class="mx-auto flex max-w-[1200px] items-end justify-center gap-4 text-white"
+    class="flex flex-col items-center justify-center gap-6 bg-primary px-4 pb-8 pt-10 text-white"
   >
-    <p class="text-sm">Un proyecto de</p>
     <a href="/">
-      <Logo class="h-7 text-white" />
+      <LogoII class="h-20 text-white" />
     </a>
+    <div class="flex items-center gap-4">
+      <a
+        href="https://facebook.com/Urb.LaReserva"
+        target="_blank"
+        class="flex items-center gap-1 rounded-full bg-white/90 p-1 transition-all duration-300 hover:scale-110 hover:bg-white"
+      >
+        <Facebook className="size-6 text-primary" />
+      </a>
+      <a
+        href="https://instagram.com/pbinmobiliariaica"
+        target="_blank"
+        class="flex items-center gap-1 rounded-full bg-white/90 p-1 transition-all duration-300 hover:scale-110 hover:bg-white"
+      >
+        <Instagram className="size-6 text-primary" />
+      </a>
+      <a
+        href="https://wa.me/51944686742"
+        target="_blank"
+        class="flex items-center gap-1 rounded-full bg-white/90 p-1 transition-all duration-300 hover:scale-110 hover:bg-white"
+      >
+        <WhatsApp className="size-6 text-primary" />
+      </a>
+    </div>
   </div>
+  <p class="bg-primary-dark py-4 text-center text-sm text-white">
+    © {new Date().getFullYear()} | Todos los Derechos Reservados
+  </p>
 </footer>

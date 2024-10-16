@@ -9,7 +9,7 @@ const BenefitModal: FC<BenefitModalProps> = ({
   return (
     <div
       onClick={onClose}
-      className={`fixed inset-0 z-50 grid place-content-center transition-colors duration-200 ${open ? "visible bg-black/90" : "invisible"}`}
+      className={`fixed inset-0 z-50 grid place-content-center p-4 transition-colors duration-200 ${open ? "visible bg-black/90" : "invisible"}`}
     >
       <div
         onClick={(e) => e.stopPropagation()}
@@ -17,13 +17,14 @@ const BenefitModal: FC<BenefitModalProps> = ({
       >
         <div className="relative">
           <img src={img} className="max-h-[90svh]" alt={title} />
-          <div className="absolute bottom-7 z-10 bg-primary/95 p-5">
+
+          <div className="bottom-7 z-10 bg-primary/95 p-5 md:absolute">
             <div className="flex items-center gap-3 pb-3">
               <Icon className="size-10 text-white" />
               <h3 className="text-lg font-medium text-white">{title}</h3>
             </div>
             <p
-              className="w-96 text-sm leading-6 text-white"
+              className="text-sm leading-6 text-white md:w-96"
               dangerouslySetInnerHTML={{ __html: longDescription }}
             ></p>
           </div>

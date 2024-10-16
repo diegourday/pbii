@@ -1,0 +1,25 @@
+---
+import Hero from "@/components/la-reserva-ii/Hero.astro";
+import Benefits from "@/components/la-reserva/Benefits";
+import Explore from "@/components/la-reserva/Explore";
+import Gallery from "@/components/la-reserva/Gallery.astro";
+import Info from "@/components/la-reserva/Info.astro";
+import Security from "@/components/la-reserva/Security.astro";
+import Testimony from "@/components/la-reserva/Testimony.astro";
+import Layout from "@/layouts/Layout.astro";
+---
+
+<Layout
+  title="La reserva | PB Inversiones Inmobiliarias"
+  description="Descubre La Reserva II, una urbanización exclusiva que ofrece un estilo de vida único con todas las comodidades y servicios que necesitas. Vive en un entorno seguro y rodeado de naturaleza."
+>
+  <Hero />
+  <main>
+    <Info />
+    <Security />
+    <Benefits client:idle />
+    <Testimony />
+    <Explore client:idle />
+    <Gallery />
+  </main>
+</Layout>

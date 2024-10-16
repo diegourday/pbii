@@ -1,7 +1,8 @@
 import { useState } from "react";
-import SketchModal from "./SketchModal.tsx";
+import SketchModal from "./ExploreModal.tsx";
+import Eye from "@/icons/Eye.tsx";
 
-export default function Sketch() {
+export default function Explore() {
   const [open, setOpen] = useState(false);
 
   const handleOpen = () => {
@@ -18,25 +19,26 @@ export default function Sketch() {
 
   return (
     <>
-      <div className="mx-auto max-w-[1100px] px-6 pt-28">
+      <div className="mx-auto max-w-[1200px] px-6 pt-32">
         <div className="grid items-center gap-11 md:grid-cols-[3fr_2fr]">
           <div
             onClick={handleOpen}
-            className="group/img relative cursor-pointer"
+            className="group/img relative order-2 cursor-pointer overflow-hidden shadow-lg shadow-primary/15 md:order-1"
           >
             <img
-              className="shadow-lg shadow-primary/15"
-              src="/lotes-la-reserva.jpg"
+              className="transition-transform duration-300 group-hover/img:scale-105"
+              src="/la-reserva-lotes-3d.jpg"
               alt="Lotes de La Reserva - PB Inversiones Inmobiliarias"
             />
             <div className="absolute inset-0 grid place-items-center bg-primary opacity-0 transition-opacity duration-300 group-hover/img:opacity-90">
-              <p className="text-center text-xl font-medium text-white">
+              <p className="flex items-center gap-1.5 text-center font-medium text-white">
+                <Eye className="size-6" />
                 Ver detalles
               </p>
             </div>
           </div>
 
-          <div className="grid">
+          <div className="order-1 flex flex-col">
             <h2 className="mb-4 text-center text-2xl font-semibold text-primary">
               Explora La Reserva
             </h2>
@@ -57,10 +59,8 @@ export default function Sketch() {
               </strong>{" "}
               para ofrecerte la mejor experiencia de vida.
             </p>
-            <button
-              onClick={handleOpen}
-              className="mx-4 bg-primary px-6 py-3 text-white transition-all duration-300 hover:scale-105 hover:bg-primary-dark"
-            >
+            <button onClick={handleOpen} className="button-primary mx-2">
+              <Eye className="size-6" />
               Ver detalles
             </button>
           </div>

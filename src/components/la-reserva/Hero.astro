@@ -1,11 +1,12 @@
 ---
-import ChevronDown from "@/icons/tabler/ChevronDown";
 import LaReservaLogo from "../logos/LaReserva.astro";
-import Button from "../ui/Button.astro";
 ---
 
-<section class="relative grid h-svh w-full place-content-center bg-black/20">
-  <video
+<section
+  class="relative grid h-dvh w-full place-content-center bg-black/20 transition-all duration-300"
+>
+  <!-- Video Background -->
+  <!-- <video
     autoplay
     loop
     muted
@@ -14,12 +15,16 @@ import Button from "../ui/Button.astro";
     class="absolute -z-10 h-full w-full object-cover"
   >
     <source src="/la-reserva.mp4" type="video/mp4" />
-  </video>
+  </video> -->
+
+  <!-- Image Background -->
+  <img
+    class="absolute -z-10 h-full w-full object-cover object-center"
+    src="/la-reserva-servicios.jpg"
+    alt=""
+  />
   <div class="m-auto grid justify-items-center gap-6">
-    <LaReservaLogo class="w-96 text-white" />
-    <a href="#info" class="button-primary flex items-center gap-2">
-      <!-- <ChevronDown className="size-6" /> -->
-      Conocer más
-    </a>
+    <LaReservaLogo class="w-3/4 text-white md:w-96" />
+    <a href="#info" class="button-primary">Conocer más</a>
   </div>
 </section>

@@ -1,13 +1,13 @@
-interface SketchModalProps {
+interface ExploreModalProps {
   open: boolean;
   onClose: () => void;
 }
 
-export default function SketchModal({ open, onClose }: SketchModalProps) {
+export default function ExploreModal({ open, onClose }: ExploreModalProps) {
   return (
     <div
       onClick={onClose}
-      className={`fixed inset-0 z-50 grid place-content-center transition-colors duration-200 ${open ? "visible bg-black/90" : "invisible"}`}
+      className={`fixed inset-0 z-50 grid place-content-center p-4 transition-colors duration-200 ${open ? "visible bg-black/90" : "invisible"}`}
     >
       <div
         onClick={(e) => e.stopPropagation()}
