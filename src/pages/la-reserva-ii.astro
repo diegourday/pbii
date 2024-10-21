@@ -1,25 +1,28 @@
 ---
-import Hero from "@/components/la-reserva-ii/Hero.astro";
-import Benefits from "@/components/la-reserva/Benefits";
-import Explore from "@/components/la-reserva/Explore";
-import Gallery from "@/components/la-reserva-ii/Gallery.astro";
+import Strategic from "@/components/la-reserva-ii/Strategic.astro";
+import Discover from "@/components/la-reserva-ii/Discover.astro";
 import Info from "@/components/la-reserva-ii/Info.astro";
-import Security from "@/components/la-reserva-ii/Security.astro";
-import Testimony from "@/components/la-reserva/Testimony.astro";
+import Ideal from "@/components/la-reserva-ii/Ideal.astro";
 import Layout from "@/layouts/Layout.astro";
+import HeroVideo from "@/components/HeroVideo.astro";
+import Services from "@/components/la-reserva-ii/Services.astro";
+import Enjoy from "@/components/la-reserva-ii/Enjoy.astro";
+import Today from "@/components/la-reserva-ii/Today.astro";
 ---
 
 <Layout
-  title="La reserva | PB Inversiones Inmobiliarias"
-  description="Descubre La Reserva II, una urbanización exclusiva que ofrece un estilo de vida único con todas las comodidades y servicios que necesitas. Vive en un entorno seguro y rodeado de naturaleza."
+  title="La reserva II - PB Inversiones Inmobiliarias"
+  description="La Reserva II es una urbanización exclusiva en Ica que ofrece lotes desde 210 m², financiamiento flexible y amplias áreas recreativas. Vive rodeado de naturaleza y confort. ¡Tu oportunidad de invertir en calidad de vida está aquí!"
+  keywords="lotes en Ica, urbanización exclusiva, áreas verdes en Ica, seguridad 24 horas, lotes residenciales en Ica, compra de terrenos, financiamiento de lotes, vigilancia 24 horas Ica, urbanización privada con servicios, áreas recreativas en Ica, ubicación estratégica Ica, urbanización cerca de colegios, servicios cercanos en Ica, galería inmobiliaria, imágenes de urbanización Ica, lotes en venta Ica, contacto inmobiliario Ica, compra de lotes, asesoría inmobiliaria Ica"
+  opDescription="Donde la exclusividad se encuentra con la naturaleza."
+  opImage="/meta/la-reserva-ii-op.webp"
 >
-  <Hero />
-  <main>
-    <Info />
-    <Security />
-    <Benefits client:idle />
-    <Testimony />
-    <Explore client:idle />
-    <Gallery />
-  </main>
+  <HeroVideo />
+  <Info />
+  <Ideal />
+  <Services />
+  <Enjoy />
+  <Strategic />
+  <Discover />
+  <Today />
 </Layout>

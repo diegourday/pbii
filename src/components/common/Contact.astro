@@ -1,5 +1,5 @@
 ---
-import MapPin from "@/icons/MapPin";
+import Pin from "@/icons/Pin.astro";
 import Phone from "@/icons/Phone";
 import Mail from "@/icons/Mail";
 import Clock from "@/icons/Clock";
@@ -7,7 +7,7 @@ import Clock from "@/icons/Clock";
 
 <section
   id="informacion"
-  class="mt-32 grid w-full bg-primary md:h-[500px] md:grid-cols-[2fr_1fr]"
+  class="grid w-full bg-primary md:h-[500px] md:grid-cols-[2fr_1fr]"
 >
   <div class="order-2 h-96 md:order-1 md:h-auto">
     <iframe
@@ -21,7 +21,7 @@ import Clock from "@/icons/Clock";
   </div>
 
   <div
-    class="order-1 flex items-center justify-center bg-[url('/testimony-bg.jpg')] bg-cover bg-fixed bg-center text-white md:order-2 md:p-10"
+    class="order-1 flex items-center justify-center bg-[url('/la-reserva/contact-bg.jpg')] bg-cover bg-fixed bg-center text-white md:order-2 md:p-10"
   >
     <div class="w-full bg-primary/95 px-6 py-16 md:px-8 md:py-8">
       <h2 class="mb-6 text-center text-2xl font-semibold">
@@ -29,26 +29,26 @@ import Clock from "@/icons/Clock";
       </h2>
       <div class="flex flex-col gap-3 md:items-start">
         <p class="contact-item hours">
-          <Clock className="size-6" />
+          <Clock className="size-5" />
           8:00 - 18:00 de Lunes a Sábado
         </p>
         <a
           href="https://maps.app.goo.gl/mSUp3kyZy8uXmc2B7"
           target="_blank"
+          rel="noopener noreferrer"
           class="contact-item"
         >
-          <MapPin className="size-6" /> Las Casuarinas 450B, Ica 11004
+          <Pin className="size-5" /> Las Casuarinas 450B, Ica 11004
         </a>
-        <a href="tel:+51944686742" target="_self" class="contact-item">
-          <Phone className="size-6" />
+        <a href="tel:+51944686742" class="contact-item">
+          <Phone className="size-5" />
           (+51) 944 686 742
         </a>
         <a
           href="mailto:ventas@pbinversionesinmobiliarias.com"
-          target="_self"
           class="contact-item"
         >
-          <Mail className="size-6" />
+          <Mail className="size-5" />
           ventas@pbinversionesinmobiliarias.com
         </a>
       </div>

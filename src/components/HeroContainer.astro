@@ -1,0 +1,18 @@
+---
+interface Props {
+  img: string;
+}
+
+const { img } = Astro.props;
+---
+
+<section
+  class="relative grid h-dvh w-full place-content-center bg-black/20 transition-all"
+>
+  <img
+    class="absolute -z-10 h-full w-full object-cover object-center"
+    src={img}
+    alt="PBII Cover"
+  />
+  <slot />
+</section>

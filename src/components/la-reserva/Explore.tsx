@@ -28,11 +28,11 @@ export default function Explore() {
             className="group/img relative order-2 cursor-pointer overflow-hidden shadow-lg shadow-primary/15 md:order-1"
           >
             <img
-              className="transition-transform duration-300 group-hover/img:scale-105"
-              src="/la-reserva-lotes-3d.jpg"
+              className="h-96 transition-transform group-hover/img:scale-105"
+              src="/la-reserva/lotes-3d.jpg"
               alt="Lotes de La Reserva - PB Inversiones Inmobiliarias"
             />
-            <div className="absolute inset-0 grid place-items-center bg-primary opacity-0 transition-opacity duration-300 group-hover/img:opacity-90">
+            <div className="absolute inset-0 grid place-items-center bg-primary opacity-0 transition-opacity group-hover/img:opacity-90">
               <p className="flex items-center gap-1.5 text-center font-medium text-white">
                 <Eye className="size-6" />
                 Ver detalles

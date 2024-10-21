@@ -31,13 +31,13 @@ export default function Carousel() {
         <div className="absolute inset-0 flex items-center justify-between p-4">
           <button
             onClick={prev}
-            className="rounded-full bg-primary p-1 text-white shadow transition-all duration-300 hover:scale-110"
+            className="rounded-full bg-primary p-1 text-white shadow transition-all hover:scale-110"
           >
             <ChevronLeft className="size-6" />
           </button>
           <button
             onClick={next}
-            className="rounded-full bg-primary p-1 text-white shadow transition-all duration-300 hover:scale-110"
+            className="rounded-full bg-primary p-1 text-white shadow transition-all hover:scale-110"
           >
             <ChevronRight className="size-6" />
           </button>

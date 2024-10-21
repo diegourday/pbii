@@ -9,11 +9,11 @@ const BenefitModal: FC<BenefitModalProps> = ({
   return (
     <div
       onClick={onClose}
-      className={`fixed inset-0 z-50 grid place-content-center p-4 transition-colors duration-200 ${open ? "visible bg-black/90" : "invisible"}`}
+      className={`fixed inset-0 z-50 grid place-content-center p-4 transition-colors ${open ? "visible bg-black/90" : "invisible"}`}
     >
       <div
         onClick={(e) => e.stopPropagation()}
-        className={`transition-all duration-300 ${open ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0"} `}
+        className={`transition-all ${open ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0"} `}
       >
         <div className="relative">
           <img src={img} className="max-h-[90svh]" alt={title} />

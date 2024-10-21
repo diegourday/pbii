@@ -14,9 +14,12 @@ import { ClientRouter } from "astro:transitions";
 interface Props {
   title: string;
   description: string;
+  keywords: string;
+  opDescription: string;
+  opImage: string;
 }
 
-const { title, description } = Astro.props;
+const { title, description, keywords, opDescription, opImage } = Astro.props;
 ---
 
 <!doctype html>
@@ -27,11 +30,30 @@ const { title, description } = Astro.props;
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <title>{title}</title>
+    <meta name="keywords" content={keywords} />
+
+    <!-- Facebook Meta Tags -->
+    <meta property="og:url" content={Astro.url} />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={opDescription} />
+    <meta property="og:image" content={opImage} />
+
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta property="twitter:domain" content="pbinversionesinmobiliarias.com" />
+    <meta property="twitter:url" content={Astro.url} />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={opDescription} />
+    <meta name="twitter:image" content={opImage} />
+
     <ClientRouter />
   </head>
   <body>
     <Header />
-    <slot />
+    <main>
+      <slot />
+    </main>
     <Contact />
     <Form />
     <Footer />
@@ -71,7 +93,13 @@ const { title, description } = Astro.props;
     background: #a38c5d;
   }
 
-  p {
+  ::selection {
+    background-color: #154142e0;
+    color: white;
+  }
+
+  p,
+  span {
     line-height: 1.7;
     letter-spacing: 0.2px;
     font-weight: 300;

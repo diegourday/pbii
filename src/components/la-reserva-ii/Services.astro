@@ -1,0 +1,105 @@
+---
+import ShieldCheck from "@/icons/ShieldCheck.astro";
+import Trees from "@/icons/Trees.tsx";
+import Droplet from "@/icons/Droplet.astro";
+import Mountain from "@/icons/Mountain.astro";
+---
+
+<section class="mx-auto mt-20 max-w-7xl px-6">
+  <h2 class="mb-4 text-center text-2xl font-semibold text-primary">
+    Servicios y comodidades de primer nivel
+  </h2>
+  <p class="mb-8 text-center">
+    En <strong class="font-medium text-primary">La Reserva II</strong>, pensamos
+    en cada de talle para tu bienestar:
+  </p>
+  <div class="mx-auto mb-16 grid max-w-5xl gap-x-10 gap-y-8 md:grid-cols-2">
+    <article class="group/article relative overflow-hidden">
+      <div
+        class="mb-2 flex w-full flex-col items-center justify-center gap-2 px-4 py-2"
+      >
+        <ShieldCheck
+          class="size-9 stroke-1 text-primary group-hover/article:animate-stroke"
+        />
+        <h3 class="text-center">
+          <strong class="font-medium text-primary"
+            >Doble pórtico de ingreso</strong
+          >
+          <span>con vigilancia</span>
+          <strong class="font-medium text-primary">24/7</strong>.
+        </h3>
+      </div>
+      <div class="overflow-hidden rounded-md">
+        <img
+          src="/la-reserva-ii/seguridad.jpg"
+          alt=""
+          class="h-64 object-cover transition-all group-hover/article:scale-105 group-hover/article:brightness-110"
+        />
+      </div>
+    </article>
+    <article class="group/article relative overflow-hidden">
+      <div
+        class="mb-2 flex w-full flex-col items-center justify-center gap-2 px-4 py-2"
+      >
+        <Trees
+          className="size-9 stroke-1 text-primary group-hover/article:animate-stroke"
+        />
+        <h3 class="text-center">
+          <span> Más de </span>
+          <strong class="font-medium text-primary"
+            >6,000 m² de áreas verdes</strong
+          >
+          <span> y paques. </span>
+        </h3>
+      </div>
+      <div class="overflow-hidden rounded-md">
+        <img
+          src="/la-reserva-ii/ninos.jpg"
+          alt=""
+          class="h-64 object-cover transition-all group-hover/article:scale-105 group-hover/article:brightness-110"
+        />
+      </div>
+    </article>
+    <article class="group/article relative overflow-hidden">
+      <div
+        class="mb-2 flex w-full flex-col items-center justify-center gap-2 px-4 py-2"
+      >
+        <Droplet
+          className="size-9 stroke-1 text-primary group-hover/article:animate-stroke"
+        />
+        <h3 class="text-center">
+          <strong class="font-medium text-primary">Agua, alcantarillado</strong>
+          <span>y</span>
+          <strong class="font-medium text-primary">pistas asfaltadas.</strong>
+        </h3>
+      </div>
+      <div class="overflow-hidden rounded-md">
+        <img
+          src="/la-reserva-ii/caminata.jpg"
+          alt=""
+          class="h-64 object-cover transition-all group-hover/article:scale-105 group-hover/article:brightness-110"
+        />
+      </div>
+    </article>
+    <article class="group/article relative overflow-hidden">
+      <div
+        class="mb-2 flex w-full flex-col items-center justify-center gap-2 px-4 py-2"
+      >
+        <Mountain
+          className="size-9 stroke-1 text-primary group-hover/article:animate-stroke"
+        />
+        <h3 class="text-center">
+          <strong class="font-medium text-primary">Mirador panorámico</strong>
+          <span> y senderos naturales.</span>
+        </h3>
+      </div>
+      <div class="overflow-hidden rounded-md">
+        <img
+          src="/la-reserva-ii/mirador.jpg"
+          alt=""
+          class="h-64 object-cover transition-all group-hover/article:scale-105 group-hover/article:brightness-110"
+        />
+      </div>
+    </article>
+  </div>
+</section>

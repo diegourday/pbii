@@ -1,0 +1,68 @@
+---
+import Eye from "@/icons/Eye";
+import School from "@/icons/School.astro";
+import MapPin from "@/icons/MapPin.tsx";
+import Road from "@/icons/Road.astro";
+---
+
+<section class="mx-auto mt-20 max-w-[1200px] px-6 md:mt-28">
+  <div class="grid items-center gap-11 md:grid-cols-[3fr_2fr]">
+    <div
+      class="group/img relative order-2 overflow-hidden rounded-md shadow-primary/15 md:order-1"
+    >
+      <img
+        class="transition-transform"
+        src="/la-reserva-ii/ubicacion.jpg"
+        alt="Lotes de La Reserva - PB Inversiones Inmobiliarias"
+      />
+      <a
+        href="/la-reserva-ii/ubicacion.jpg"
+        target="_blank"
+        class="absolute left-1/2 top-[73%] flex -translate-x-1/2 items-center gap-1.5 rounded-md bg-primary px-4 py-2 text-sm text-white transition-all hover:bg-primary-dark md:top-full md:group-hover/img:top-[83%]"
+      >
+        <Eye className="size-5" />
+        Ver completo</a
+      >
+    </div>
+
+    <div class="order-1 flex flex-col">
+      <h2 class="mb-4 text-center text-2xl font-semibold text-primary">
+        Ubicación estratégica en Ica
+      </h2>
+      <p class="mb-4 font-light">
+        Ubicada a solo minutos de colegios, universidades, centros de salud y
+        restaurantes,
+        <strong class="font-medium text-primary">La Reserva II</strong> te mantiene
+        conectado con todo lo que importa:
+      </p>
+      <ul role="list" class="space-y-2 *:inline-flex *:gap-3 *:font-light">
+        <li>
+          <School class="stroke-2 text-primary" />
+          <p>
+            Cerca de <strong class="font-medium text-primary"
+              >Innova Schools</strong
+            > y otras instituciones educativas.
+          </p>
+        </li>
+        <li>
+          <MapPin className="stroke-2 text-primary" />
+          <p>
+            Próxima a <strong class="font-medium text-primary"
+              >centros comerciales</strong
+            > y zonas de interés turístico.
+          </p>
+        </li>
+        <li>
+          <Road className="stroke-2 text-primary" />
+          <p>
+            Acceso rápido a <strong class="font-medium text-primary"
+              >servicios esenciales</strong
+            > y vías principales.
+          </p>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <hr class="mt-20 border-slate-200" />
+</section>

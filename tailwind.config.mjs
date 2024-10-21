@@ -9,6 +9,13 @@ export default {
         secondary: "#B6A27A",
         "secondary-dark": "#A38C5D",
       },
+      transitionDuration: {
+        DEFAULT: "300ms",
+      },
+      animation: {
+        stroke: "stroke 2s ease-in-out infinite",
+        pulse: "pulse 3s ease-in-out infinite",
+      },
     },
   },
   plugins: [],
