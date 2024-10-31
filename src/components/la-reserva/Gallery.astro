@@ -1,36 +1,52 @@
-<section class="mx-auto mb-20 max-w-[1200px] px-6 pt-32">
-  <h2 class="mb-6 text-center text-2xl font-semibold text-primary">
-    Galería de La Reserva
-  </h2>
+---
+import Heart from "@/icons/Heart.astro";
+---
 
-  <div class="grid gap-2 md:grid-cols-2">
-    <div>
-      <img
-        class="h-96 max-w-full object-cover transition hover:saturate-150"
-        src="/la-reserva/parque.jpg"
-        alt=""
-      />
-    </div>
-    <div>
-      <img
-        class="h-96 max-w-full object-cover transition hover:saturate-150"
-        src="/la-reserva/servicios.jpg"
-        alt=""
-      />
-    </div>
-    <div>
-      <img
-        class="h-96 max-w-full object-cover transition hover:saturate-150"
-        src="/la-reserva/ciclovia.jpg"
-        alt=""
-      />
-    </div>
-    <div>
-      <img
-        class="h-96 max-w-full object-cover transition hover:saturate-150"
-        src="/la-reserva/ninos.jpg"
-        alt=""
-      />
-    </div>
+<section class="mx-auto mt-20 max-w-[1200px] px-6">
+  <h2 class="mb-4 text-center text-2xl font-semibold text-primary">
+    Descubra La Reserva en imágenes
+  </h2>
+  <p class="mb-7 text-center">
+    Explore nuestras áreas recreativas, impresionantes paisajes y mucho más
+    <br />en nuestra galería de imágenes 3D.
+  </p>
+
+  <div class="mb-10 flex items-center justify-center gap-1">
+    <Heart class="size-5 stroke-2 text-primary" />
+    <strong class="text-center font-semibold text-primary"
+      >¡Enamórase de su futuro hogar!</strong
+    >
   </div>
+
+  <div class="flex flex-col items-center gap-4">
+    <img
+      class="h-96 max-w-full rounded-md object-cover transition hover:saturate-150"
+      src="/la-reserva/parque.webp"
+      alt="Áreas recreativas y verdes en la urbanización La Reserva II"
+    />
+    <img
+      class="h-96 max-w-full rounded-md object-cover transition hover:saturate-150"
+      src="/la-reserva/servicios.webp"
+      alt="Caminatas en La Reserva II"
+    />
+    <img
+      class="h-96 max-w-full rounded-md object-cover transition hover:saturate-150"
+      src="/la-reserva/ciclovia.webp"
+      alt="Lotes en venta en Ica, urbanización La Reserva II"
+    />
+    <img
+      class="h-96 max-w-full rounded-md object-cover transition hover:saturate-150"
+      src="/la-reserva/ninos.webp"
+      alt="Vista panorámica desde el mirador en La Reserva II, Ica"
+    />
+  </div>
+  <hr class="mt-20 border-slate-200" />
 </section>
+
+<style>
+  img {
+    animation: reveal linear both;
+    animation-timeline: view();
+    animation-range: entry 20% cover 40%;
+  }
+</style>

@@ -6,6 +6,7 @@ export default {
       colors: {
         primary: "#154142",
         "primary-dark": "#0B3132",
+        "primary-light": "#075E54",
         secondary: "#B6A27A",
         "secondary-dark": "#A38C5D",
       },
@@ -13,7 +14,7 @@ export default {
         DEFAULT: "300ms",
       },
       animation: {
-        stroke: "stroke 2s ease-in-out infinite",
+        stroke: "stroke 3s ease-in-out infinite",
         pulse: "pulse 3s ease-in-out infinite",
       },
     },

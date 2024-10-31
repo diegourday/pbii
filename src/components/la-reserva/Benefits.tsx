@@ -16,7 +16,7 @@ const BENEFITS: Benefit[] = [
     longDescription:
       "Disfruta de <strong class='font-semibold'>amplias áreas verdes</strong> diseñadas para el descanso y esparcimiento de toda la familia. Espacios <strong class='font-semibold'>llenos de naturaleza</strong> que promueven la vida saludable y el bienestar de los residentes.",
     icon: Trees,
-    img: "/la-reserva/parque.jpg",
+    img: "/la-reserva/parque.webp",
   },
   {
     title: "Servicios completos",
@@ -24,7 +24,7 @@ const BENEFITS: Benefit[] = [
     longDescription:
       "Todos los <strong class='font-semibold'>servicios básicos</strong> están completamente habilitados, desde agua potable y electricidad hasta sistemas de desagüe, para que puedas disfrutar de <strong class='font-semibold'>la comodidad</strong> desde el primer día.",
     icon: Bulb,
-    img: "/la-reserva/servicios.jpg",
+    img: "/la-reserva/servicios.webp",
   },
   {
     title: "Excelente ubicación",
@@ -40,7 +40,7 @@ const BENEFITS: Benefit[] = [
     longDescription:
       "Disfruta de rutas <strong class='font-semibold'>diseñadas especialmente</strong> para ciclistas, asegurando un ambiente seguro para que puedas moverte de manera <strong class='font-semibold'>ecológica y saludable</strong> dentro de la urbanización.",
     icon: Bike,
-    img: "/la-reserva/ciclovia.jpg",
+    img: "/la-reserva/ciclovia.webp",
   },
   {
     title: "Juegos para niños",
@@ -48,7 +48,7 @@ const BENEFITS: Benefit[] = [
     longDescription:
       "Los más pequeños tendrán a su disposición áreas de juegos <strong class='font-semibold'>equipadas y diseñadas</strong> para garantizar su seguridad y diversión, promoviendo el juego activo y la <strong class='font-semibold'>socialización</strong>.",
     icon: Monkeybar,
-    img: "/la-reserva/ninos.jpg",
+    img: "/la-reserva/ninos.webp",
   },
   {
     title: "Facilidades de pago",
@@ -56,7 +56,7 @@ const BENEFITS: Benefit[] = [
     longDescription:
       "Ofrecemos una amplia gama de opciones de financiamiento para que adquieras tu terreno de manera cómoda y accesible. ¡Encuentra la opción de pago que mejor se adapte a tus necesidades!",
     icon: Dollar,
-    img: "/la-reserva/parque.jpg",
+    img: "/la-reserva/parque.webp",
   },
 ];
 
@@ -78,7 +78,7 @@ export default function Benefits() {
   };
 
   return (
-    <section className="mx-auto max-w-[1200px] px-6 pt-32">
+    <section className="mx-auto mt-20 max-w-[1200px] px-6">
       <h2 className="mb-6 text-center text-2xl font-semibold text-primary">
         Beneficios de vivir en La Reserva
       </h2>

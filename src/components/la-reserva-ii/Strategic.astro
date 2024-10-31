@@ -8,17 +8,17 @@ import Road from "@/icons/Road.astro";
 <section class="mx-auto mt-20 max-w-[1200px] px-6 md:mt-28">
   <div class="grid items-center gap-11 md:grid-cols-[3fr_2fr]">
     <div
-      class="group/img relative order-2 overflow-hidden rounded-md shadow-primary/15 md:order-1"
+      class="group relative order-2 overflow-hidden rounded-md shadow-primary/15 md:order-1"
     >
       <img
-        class="transition-transform"
-        src="/la-reserva-ii/ubicacion.jpg"
+        class="h-72 object-cover transition-transform md:h-auto"
+        src="/la-reserva-ii/ubicacion.webp"
         alt="Lotes de La Reserva - PB Inversiones Inmobiliarias"
       />
       <a
-        href="/la-reserva-ii/ubicacion.jpg"
+        href="/la-reserva-ii/ubicacion.webp"
         target="_blank"
-        class="absolute left-1/2 top-[73%] flex -translate-x-1/2 items-center gap-1.5 rounded-md bg-primary px-4 py-2 text-sm text-white transition-all hover:bg-primary-dark md:top-full md:group-hover/img:top-[83%]"
+        class="absolute bottom-4 left-1/2 flex -translate-x-1/2 items-center gap-1.5 rounded-md bg-primary px-4 py-2 text-sm text-white transition-all hover:bg-primary-dark md:-bottom-10 md:group-hover:bottom-3"
       >
         <Eye className="size-5" />
         Ver completo</a
@@ -32,7 +32,7 @@ import Road from "@/icons/Road.astro";
       <p class="mb-4 font-light">
         Ubicada a solo minutos de colegios, universidades, centros de salud y
         restaurantes,
-        <strong class="font-medium text-primary">La Reserva II</strong> te mantiene
+        <strong class="font-medium text-primary">La Reserva II</strong> le mantiene
         conectado con todo lo que importa:
       </p>
       <ul role="list" class="space-y-2 *:inline-flex *:gap-3 *:font-light">
@@ -53,7 +53,7 @@ import Road from "@/icons/Road.astro";
           </p>
         </li>
         <li>
-          <Road className="stroke-2 text-primary" />
+          <Road className="stroke-[2.5] text-primary" />
           <p>
             Acceso rápido a <strong class="font-medium text-primary"
               >servicios esenciales</strong

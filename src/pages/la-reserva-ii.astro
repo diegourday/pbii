@@ -8,6 +8,7 @@ import HeroVideo from "@/components/HeroVideo.astro";
 import Services from "@/components/la-reserva-ii/Services.astro";
 import Enjoy from "@/components/la-reserva-ii/Enjoy.astro";
 import Today from "@/components/la-reserva-ii/Today.astro";
+import { DOMAIN_URL } from "astro:env/server";
 ---
 
 <Layout
@@ -15,7 +16,7 @@ import Today from "@/components/la-reserva-ii/Today.astro";
   description="La Reserva II es una urbanización exclusiva en Ica que ofrece lotes desde 210 m², financiamiento flexible y amplias áreas recreativas. Vive rodeado de naturaleza y confort. ¡Tu oportunidad de invertir en calidad de vida está aquí!"
   keywords="lotes en Ica, urbanización exclusiva, áreas verdes en Ica, seguridad 24 horas, lotes residenciales en Ica, compra de terrenos, financiamiento de lotes, vigilancia 24 horas Ica, urbanización privada con servicios, áreas recreativas en Ica, ubicación estratégica Ica, urbanización cerca de colegios, servicios cercanos en Ica, galería inmobiliaria, imágenes de urbanización Ica, lotes en venta Ica, contacto inmobiliario Ica, compra de lotes, asesoría inmobiliaria Ica"
   opDescription="Donde la exclusividad se encuentra con la naturaleza."
-  opImage="/meta/la-reserva-ii-op.webp"
+  opImage={`${DOMAIN_URL}/meta/la-reserva-ii-op.webp`}
 >
   <HeroVideo />
   <Info />

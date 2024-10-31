@@ -20,8 +20,8 @@ const isActive = currentPath === href && checkActive;
   href={href}
   class:list={[
     className,
-    "border-b-2",
-    isActive ? "border-white" : "border-transparent",
+    "border-b-2 transition-colors hover:border-white",
+    isActive ? "pointer-events-none border-white" : "border-transparent",
   ]}
   {...restOfProps}
 >

@@ -1,9 +1,9 @@
 ---
 import HomeCheck from "@/icons/HomeCheck";
-import DiscountCheck from "@/icons/DiscountCheck";
+import VisitForm from "../VisitForm";
 ---
 
-<section id="info" class="mx-auto mt-20 max-w-[600px] px-6">
+<section id="info" class="mx-auto max-w-[600px] px-8 pt-16 md:pt-20">
   <h1 class="mb-6 text-center text-2xl font-semibold leading-9 text-primary">
     La Reserva II <br /> Vive el confort en la naturaleza de Ica
   </h1>
@@ -19,18 +19,15 @@ import DiscountCheck from "@/icons/DiscountCheck";
     > en una urbanización privada rodeada de áreas verdes y vistas panorámicas.
   </p>
   <p class="mb-8">
-    Disfruta de todos los servicios que tu familia necesita en un entorno <strong
+    Disfrute de todos los servicios que su familia necesita en un entorno <strong
       class="font-medium text-primary">seguro y privilegiado</strong
     > .
   </p>
   <div class="flex flex-col justify-center gap-4 md:flex-row">
-    <a href="#contactanos" class="button-primary">
+    <a href="#formulario-de-contacto" class="button-primary">
       <HomeCheck className="size-6" />
-      Reservar Lote</a
-    >
-    <a href="#contactanos" class="button-secondary">
-      <DiscountCheck className="size-6" />
       Solicitar Cotización
     </a>
+    <VisitForm client:idle />
   </div>
 </section>

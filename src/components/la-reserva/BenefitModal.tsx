@@ -2,18 +2,18 @@ import type { BenefitModalProps } from "@/types/Benefits";
 import type { FC } from "react";
 
 const BenefitModal: FC<BenefitModalProps> = ({
-  benefit: { title, description, icon: Icon, img, longDescription },
+  benefit: { title, icon: Icon, img, longDescription },
   open,
   onClose,
 }) => {
   return (
     <div
       onClick={onClose}
-      className={`fixed inset-0 z-50 grid place-content-center p-4 transition-colors ${open ? "visible bg-black/90" : "invisible"}`}
+      className={`fixed inset-0 z-50 grid place-content-center bg-black/50 p-4 transition ${open ? "pointer-events-auto opacity-100" : "pointer-events-none opacity-0"}`}
     >
       <div
         onClick={(e) => e.stopPropagation()}
-        className={`transition-all ${open ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0"} `}
+        className={`transition ${open ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0"} `}
       >
         <div className="relative">
           <img src={img} className="max-h-[90svh]" alt={title} />

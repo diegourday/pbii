@@ -2,7 +2,7 @@ import ChevronLeft from "@/icons/ChevronLeft";
 import ChevronRight from "@/icons/ChevronRight";
 import { useEffect, useState } from "react";
 
-const slides = ["/parques.jpg", "/ciclovia.jpg", "/ninos.jpg"];
+const slides = ["parque.webp", "ciclovia.webp", "ninos.webp"];
 
 export default function Carousel() {
   const [curr, setCurr] = useState(0);
@@ -25,7 +25,7 @@ export default function Carousel() {
           style={{ transform: `translateX(-${curr * 100}%)` }}
         >
           {slides.map((s) => (
-            <img src={s} alt="" />
+            <img src={`/la-reserva/${s}`} alt={s} />
           ))}
         </div>
         <div className="absolute inset-0 flex items-center justify-between p-4">

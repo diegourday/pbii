@@ -1,0 +1,64 @@
+---
+import ArrowUpRight from "@/icons/ArrowUpRight.astro";
+import LaReservaIILogo from "../common/LaReservaIILogo.astro";
+import LaReservaLogo from "../common/LaReservaLogo.astro";
+import PalmaRealLogo from "../common/PalmaRealLogo.astro";
+
+type Project = {
+  href: string;
+  img: string;
+  title: string;
+  logo: any;
+};
+
+const PROJECTS: Project[] = [
+  {
+    href: "/la-reserva",
+    img: "/pbii/la-reserva-casa.webp",
+    title: "La reserva",
+    logo: LaReservaLogo,
+  },
+  {
+    href: "/la-reserva-ii",
+    img: "/pbii/la-reserva-ii-casa.webp",
+    title: "La reserva II",
+    logo: LaReservaIILogo,
+  },
+  {
+    href: "/la-reserva-ii",
+    img: "/pbii/palma-real-casa.webp",
+    title: "Palma Real",
+    logo: PalmaRealLogo,
+  },
+];
+---
+
+<section class="mx-auto max-w-[900px] px-6 pt-20">
+  <h2 class="mb-8 text-center text-2xl font-semibold text-primary">
+    Nuestros proyectos
+  </h2>
+  <div class="grid gap-6 md:grid-cols-3">
+    {
+      PROJECTS.map(({ href, img, title, logo: Logo }) => (
+        <a href={href} title={title}>
+          <article class="group relative overflow-hidden rounded-md transition hover:scale-y-105">
+            <div class="relative overflow-hidden">
+              <img
+                class="h-[450px] object-cover object-left transition-all duration-[2s] group-hover:object-right group-hover:brightness-110"
+                src={img}
+                alt=""
+              />
+              <p class="absolute bottom-4 left-1/2 flex -translate-x-1/2 items-center gap-1 rounded-full border border-white bg-white/90 px-4 py-1 font-semibold text-primary transition-all delay-0 group-hover:opacity-100 group-hover:delay-200 md:-bottom-3 md:opacity-0 md:group-hover:bottom-4">
+                <ArrowUpRight class="size-5" />
+                Visitar
+              </p>
+            </div>
+            <div class="bg-primary p-4 transition-colors group-hover:bg-primary-dark">
+              <Logo class="mx-auto h-20 w-auto max-w-36 text-white" />
+            </div>
+          </article>
+        </a>
+      ))
+    }
+  </div>
+</section>

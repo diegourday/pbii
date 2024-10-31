@@ -1,22 +1,23 @@
 ---
 import Layout from "../layouts/Layout.astro";
-return Astro.redirect("/la-reserva-ii");
+import Top from "@/components/index/Top.astro";
+import Info from "@/components/index/Info.astro";
+import Projects from "@/components/index/Projects.astro";
+import Since from "@/components/index/Since.astro";
+import Identity from "@/components/index/Identity.astro";
+import { DOMAIN_URL } from "astro:env/server";
 ---
 
 <Layout
   title="PB Inversiones Inmobiliarias"
-  description="Somos una desarrolladora inmobiliaria comprometida con la innovación y satisfacción de nuestros clientes y sus familias"
+  description="Somos una desarrolladora inmobiliaria comprometida con la innovación y satisfacción de nuestros clientes y sus familias."
   keywords="inmobiliaria, propiedades, casas, departamentos, alquiler, venta"
-  opDescription="Una empresa del grupo POSBEN"
-  opImage="/meta/pbii-op.webp"
+  opDescription="Una empresa del grupo POSBEN."
+  opImage={`${DOMAIN_URL}/meta/pbii-op.webp`}
 >
-  <main>
-    <section class="mx-auto w-full py-10 lg:w-[740px]">
-      <h1 class="text-center">PB Inversiones Inmobiliarias</h1>
-      <h2>
-        En PB Inversiones Inmobiliarias nos dedicamos a la compra, venta y
-        alquiler de propiedades en la ciudad de Buenos Aires.
-      </h2>
-    </section>
-  </main>
+  <Top />
+  <Info />
+  <Projects />
+  <Since />
+  <Identity />
 </Layout>

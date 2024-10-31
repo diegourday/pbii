@@ -1,0 +1,72 @@
+---
+import ArrowRightCircle from "@/icons/ArrowRightCircle.astro";
+
+type Card = {
+  img: string;
+  title: string;
+  year: string;
+};
+
+const CARDS: Card[] = [
+  {
+    img: "automotriz.webp",
+    title: "Automotriz",
+    year: "2007",
+  },
+  {
+    img: "inmobiliaria.webp",
+    title: "Inmobiliaria",
+    year: "2017",
+  },
+
+  {
+    img: "agricola.webp",
+    title: "Agrícola",
+    year: "1960",
+  },
+  {
+    img: "combustibles.webp",
+    title: "Combustibles y Lubricantes",
+    year: "1998",
+  },
+];
+
+const sinceYear = new Date().getFullYear() - 1960;
+---
+
+<section class="mx-auto max-w-[900px] px-6 pt-20 md:pt-28">
+  <h2 class="mb-8 text-center text-2xl font-semibold text-primary">
+    Presentes desde hace {sinceYear} años
+  </h2>
+
+  <div class="grid gap-x-6 gap-y-8 md:grid-cols-2">
+    {
+      CARDS.map(({ img, title, year }) => (
+        <article class="group overflow-hidden rounded-md">
+          <div class="relative mb-3 overflow-hidden rounded-md">
+            <img
+              src={`/pbii/${img}`}
+              alt=""
+              class="h-64 w-full object-cover transition group-hover:scale-105 group-hover:brightness-110"
+            />
+            <p class="absolute bottom-3 left-3 flex items-center gap-2 rounded-full border border-white bg-white/90 px-4 py-1 font-semibold text-primary transition-all group-hover:left-3 group-hover:opacity-100 md:left-1 md:opacity-0">
+              <ArrowRightCircle class="size-4" />
+              Desde {year}
+            </p>
+          </div>
+          <h3 class="text-center text-lg font-semibold text-primary">
+            {title}
+          </h3>
+        </article>
+      ))
+    }
+  </div>
+</section>
+
+<!-- <style>
+  article {
+    animation: reveal linear both;
+    animation-timeline: view();
+    animation-range: entry 20% cover 30%;
+  }
+</style> -->
