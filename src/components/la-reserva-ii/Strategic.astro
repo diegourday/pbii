@@ -3,6 +3,7 @@ import Eye from "@/icons/Eye";
 import School from "@/icons/School.astro";
 import MapPin from "@/icons/MapPin.tsx";
 import Road from "@/icons/Road.astro";
+import StrategicModal from "./StrategicModal";
 ---
 
 <section class="mx-auto mt-20 max-w-[1200px] px-6 md:mt-28">
@@ -15,14 +16,15 @@ import Road from "@/icons/Road.astro";
         src="/la-reserva-ii/ubicacion.webp"
         alt="Lotes de La Reserva - PB Inversiones Inmobiliarias"
       />
-      <a
+      <StrategicModal client:visible />
+      <!-- <a
         href="/la-reserva-ii/ubicacion.webp"
         target="_blank"
         class="absolute bottom-4 left-1/2 flex -translate-x-1/2 items-center gap-1.5 rounded-md bg-primary px-4 py-2 text-sm text-white transition-all hover:bg-primary-dark md:-bottom-10 md:group-hover:bottom-3"
       >
         <Eye className="size-5" />
         Ver completo</a
-      >
+      > -->
     </div>
 
     <div class="order-1 flex flex-col">

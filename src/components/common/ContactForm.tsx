@@ -31,13 +31,13 @@ export default function ContactForm() {
     reset,
   } = useForm<Inputs>({
     resolver: zodResolver(contactSchema),
-    mode: "onBlur",
+    mode: "onChange",
   });
 
   const onSubmit: SubmitHandler<Inputs> = async (data) => {
     setLoading(true);
     try {
-      await fetch(`${API_URL}`, {
+      await fetch(`${API_URL}/visit`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -47,7 +47,7 @@ export default function ContactForm() {
       toast.success("¡Gracias! Te contactaremos pronto.");
       reset();
     } catch (error) {
-      toast.error("Ocurrió un error. Inténtalo de nuevo.");
+      toast.warning("Ocurrió un error. Inténtalo de nuevo.");
       console.error("Error:", error);
     } finally {
       setLoading(false);
@@ -65,9 +65,7 @@ export default function ContactForm() {
       <form onSubmit={handleSubmit(onSubmit)} className="mx-auto max-w-[800px]">
         <div className="flex flex-col gap-6 md:grid md:grid-cols-2">
           <div className="flex flex-col">
-            <label htmlFor="name" className="pb-1">
-              Nombres
-            </label>
+            <label htmlFor="name">Nombres</label>
             <input
               id="name"
               type="text"
@@ -82,9 +80,7 @@ export default function ContactForm() {
             )}
           </div>
           <div className="flex flex-col">
-            <label htmlFor="dni" className="pb-1">
-              DNI
-            </label>
+            <label htmlFor="dni">DNI</label>
             <input
               id="dni"
               type="text"
@@ -97,9 +93,7 @@ export default function ContactForm() {
             )}
           </div>
           <div className="flex flex-col">
-            <label htmlFor="phone" className="pb-1">
-              Teléfono
-            </label>
+            <label htmlFor="phone">Teléfono</label>
             <input
               id="phone"
               type="text"
@@ -114,9 +108,7 @@ export default function ContactForm() {
             )}
           </div>
           <div className="flex flex-col">
-            <label htmlFor="email" className="pb-1">
-              Email
-            </label>
+            <label htmlFor="email">Email</label>
             <input
               id="email"
               type="email"
@@ -135,9 +127,7 @@ export default function ContactForm() {
             Elija la fecha y hora en la que le gustaría ser contactado.
           </p>
           <div className="flex flex-col">
-            <label htmlFor="contact_date" className="pb-1">
-              Fecha
-            </label>
+            <label htmlFor="contact_date">Fecha</label>
             <input
               id="contact_date"
               type="date"
@@ -153,9 +143,7 @@ export default function ContactForm() {
             )}
           </div>
           <div className="mb-2 flex flex-col">
-            <label htmlFor="contact_time" className="pb-1">
-              Hora
-            </label>
+            <label htmlFor="contact_time">Hora</label>
             <input
               id="contact_time"
               type="time"

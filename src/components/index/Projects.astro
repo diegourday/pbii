@@ -40,7 +40,7 @@ const PROJECTS: Project[] = [
   <div class="grid gap-6 md:grid-cols-3">
     {
       PROJECTS.map(({ href, img, title, logo: Logo }) => (
-        <a href={href} title={title}>
+        <a href={href} target="_blank" title={title}>
           <article class="group relative overflow-hidden rounded-md transition hover:scale-y-105">
             <div class="relative overflow-hidden">
               <img
@@ -48,7 +48,7 @@ const PROJECTS: Project[] = [
                 src={img}
                 alt=""
               />
-              <p class="absolute bottom-4 left-1/2 flex -translate-x-1/2 items-center gap-1 rounded-full border border-white bg-white/90 px-4 py-1 font-semibold text-primary transition-all delay-0 group-hover:opacity-100 group-hover:delay-200 md:-bottom-3 md:opacity-0 md:group-hover:bottom-4">
+              <p class="absolute bottom-3 left-1/2 flex -translate-x-1/2 items-center gap-1 rounded-full border border-white bg-white/90 px-4 py-0.5 font-semibold text-primary transition-all delay-0 group-hover:opacity-100 group-hover:delay-200 md:-bottom-3 md:opacity-0 md:group-hover:bottom-3">
                 <ArrowUpRight class="size-5" />
                 Visitar
               </p>

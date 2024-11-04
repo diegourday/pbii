@@ -1,14 +1,9 @@
 ---
-import Info from "@/components/la-reserva/Info.astro";
-import Benefits from "@/components/la-reserva/Benefits.tsx";
-import Explore from "@/components/la-reserva/Explore";
+import Info from "@/components/palma-real/Info.astro";
 import Layout from "@/layouts/Layout.astro";
-import Security from "@/components/la-reserva/Security.astro";
-import Testimony from "@/components/la-reserva/Testimony.astro";
-import Gallery from "@/components/la-reserva/Gallery.astro";
+import Gallery from "@/components/palma-real/Gallery.astro";
 import HeroContainer from "@/components/HeroContainer.astro";
-import LaReservaLogo from "@/components/common/LaReservaLogo.astro";
-import Today from "@/components/la-reserva-ii/Today.astro";
+import PalmaRealLogo from "@/components/common/PalmaRealLogo.astro";
 import { DOMAIN_URL } from "astro:env/server";
 import MoreButton from "@/components/common/MoreButton.astro";
 ---
@@ -20,17 +15,12 @@ import MoreButton from "@/components/common/MoreButton.astro";
   opDescription="Donde la exclusividad se encuentra con la naturaleza."
   opImage={`${DOMAIN_URL}/meta/la-reserva-ii-op.webp`}
 >
-  <HeroContainer img="/la-reserva/servicios.webp">
-    <div class="flex flex-col items-center gap-6">
-      <LaReservaLogo class="animate-fadeIn h-auto w-3/4 text-white md:w-96" />
+  <HeroContainer img="/palma-real/casa.webp">
+    <div class="animate-fadeIn flex flex-col items-center gap-6">
+      <PalmaRealLogo class="animate-fadeIn h-auto w-3/4 text-white md:w-96" />
       <MoreButton />
     </div>
   </HeroContainer>
   <Info />
-  <Security />
-  <Benefits client:visible />
-  <Testimony />
-  <Explore client:visible />
   <Gallery />
-  <Today />
 </Layout>
