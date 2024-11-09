@@ -1,18 +1,61 @@
 ---
+import MoreButton from "./common/MoreButton.astro";
+
 interface Props {
   img: string;
+  logo: any;
 }
 
-const { img } = Astro.props;
+const { img, logo: Logo } = Astro.props;
 ---
 
 <section
   class="relative grid h-dvh w-full place-content-center bg-black/20 transition-all"
 >
+  <div class="absolute inset-0 -z-20 bg-primary"></div>
   <img
-    class="absolute -z-10 h-full w-full object-cover object-center"
+    id="hero-image"
+    class="absolute -z-10 hidden h-full w-full object-cover object-left"
     src={img}
     alt="PBII Cover"
   />
+  <div class="flex flex-col items-center gap-6">
+    <Logo class="h-auto w-3/4 text-white md:w-96" />
+    <MoreButton />
+  </div>
   <slot />
 </section>
+
+<script>
+  document.addEventListener("astro:page-load", () => {
+    const heroImage = document.getElementById("hero-image") as HTMLImageElement;
+
+    if (heroImage) {
+      const handleImageLoad = () => {
+        heroImage.classList.remove("hidden");
+        heroImage.classList.add("animate-fade");
+      };
+
+      if (heroImage.complete) {
+        handleImageLoad();
+      } else {
+        heroImage.addEventListener("load", handleImageLoad);
+      }
+    }
+  });
+</script>
+
+<style>
+  @keyframes slide {
+    from {
+      object-position: left center;
+    }
+    to {
+      object-position: right center;
+    }
+  }
+
+  #hero-image {
+    animation: slide 10s infinite alternate ease-in-out;
+  }
+</style>

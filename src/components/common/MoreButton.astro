@@ -1,5 +1,22 @@
-<a
-  href="#info"
-  class="button-primary animate-fadeInDelay -translate-y-8 opacity-0"
-  >Conocer más</a
->
+<button id="scroll-button" class="button-primary">Conocer más</button>
+
+<script>
+  document.addEventListener("astro:page-load", () => {
+    const scrollButton = document.getElementById("scroll-button");
+
+    if (scrollButton) {
+      scrollButton.addEventListener("click", (event) => {
+        event.preventDefault();
+        const targetElement = document.getElementById("info");
+        const offset = 64;
+        if (targetElement) {
+          const targetPosition = targetElement.offsetTop - offset;
+          window.scrollTo({
+            top: targetPosition,
+            behavior: "smooth",
+          });
+        }
+      });
+    }
+  });
+</script>

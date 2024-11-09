@@ -1,12 +1,12 @@
 ---
-import Eye from "@/icons/Eye";
 import School from "@/icons/School.astro";
 import MapPin from "@/icons/MapPin.tsx";
 import Road from "@/icons/Road.astro";
-import StrategicModal from "./StrategicModal";
+import Badge from "@/components/common/Badge.astro";
+import Eye from "@/icons/Eye";
 ---
 
-<section class="mx-auto mt-20 max-w-[1200px] px-6 md:mt-28">
+<section class="mx-auto mt-20 max-w-7xl px-6 md:mt-28">
   <div class="grid items-center gap-11 md:grid-cols-[3fr_2fr]">
     <div
       class="group relative order-2 overflow-hidden rounded-md shadow-primary/15 md:order-1"
@@ -16,15 +16,15 @@ import StrategicModal from "./StrategicModal";
         src="/la-reserva-ii/ubicacion.webp"
         alt="Lotes de La Reserva - PB Inversiones Inmobiliarias"
       />
-      <StrategicModal client:visible />
-      <!-- <a
-        href="/la-reserva-ii/ubicacion.webp"
-        target="_blank"
-        class="absolute bottom-4 left-1/2 flex -translate-x-1/2 items-center gap-1.5 rounded-md bg-primary px-4 py-2 text-sm text-white transition-all hover:bg-primary-dark md:-bottom-10 md:group-hover:bottom-3"
+      <button
+        id="button-strategic"
+        type="button"
+        class="absolute bottom-4 left-1/2 flex -translate-x-1/2 items-center gap-1.5 rounded-md bg-primary px-4 py-2.5 text-sm text-white transition-all hover:bg-primary-dark md:-bottom-10 md:opacity-0 md:group-hover:bottom-3 md:group-hover:opacity-100"
       >
         <Eye className="size-5" />
-        Ver completo</a
-      > -->
+        Ver completo
+      </button>
+      <Badge class="absolute left-3 top-3">Desde 210 m²</Badge>
     </div>
 
     <div class="order-1 flex flex-col">
@@ -66,5 +66,5 @@ import StrategicModal from "./StrategicModal";
     </div>
   </div>
 
-  <hr class="mt-20 border-slate-200" />
+  <hr class="border-secondary-light mt-24" />
 </section>

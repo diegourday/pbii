@@ -18,12 +18,38 @@ const isActive = currentPath === href && checkActive;
 
 <a
   href={href}
-  class:list={[
-    className,
-    "border-b-2 transition-colors hover:border-white",
-    isActive ? "pointer-events-none border-white" : "border-transparent",
-  ]}
+  class:list={[className, "a-link", isActive && "pointer-events-none"]}
   {...restOfProps}
 >
-  <slot />
+  <div
+    class=`nav-link ${isActive && "after:[transform:_scaleX(1)_!important]"}`
+  >
+    <slot />
+  </div>
 </a>
+
+<style>
+  .a-link {
+    padding: 10px 14px;
+  }
+
+  .nav-link {
+    position: relative;
+  }
+
+  .nav-link::after {
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: white;
+    transition: transform 0.3s ease;
+    transform: scaleX(0);
+  }
+
+  .a-link:hover .nav-link::after {
+    transform: scaleX(1);
+  }
+</style>

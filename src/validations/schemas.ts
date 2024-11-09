@@ -1,6 +1,6 @@
 import { z } from "zod";
 
-const today = new Date().toISOString().split("T")[0];
+const today = new Date().toLocaleDateString("en-CA");
 
 export const contactSchema = z.object({
   name: z

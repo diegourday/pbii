@@ -19,7 +19,7 @@ type Inputs = {
   contact_time: string;
 };
 
-const today = new Date().toISOString().split("T")[0];
+const today = new Date().toLocaleDateString("en-CA");
 const currentYear = new Date().getFullYear();
 const nextYear = currentYear + 1;
 const maxDate = `${nextYear}-12-31`;
@@ -42,16 +42,16 @@ export default function PopupForm() {
   const onSubmit: SubmitHandler<Inputs> = async (data) => {
     setLoading(true);
     try {
-      await fetch(`${API_URL}`, {
+      const response = await fetch(`${API_URL}/contact`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify(data),
       });
+      if (!response.ok) throw new Error();
       toast.success("¡Gracias! Te contactaremos pronto.");
-      localStorage.setItem("formSubmitted", "true");
-      handleClose();
+      hidePopup();
       reset();
     } catch (error) {
       toast.warning("Ocurrió un error. Inténtalo de nuevo.");
@@ -61,6 +61,16 @@ export default function PopupForm() {
     }
   };
 
+  const hidePopup = () => {
+    localStorage.setItem("hidePopup", "true");
+    handleClose();
+  };
+
+  const handleOpen = () => {
+    setOpen(true);
+    onOpen();
+  };
+
   const handleClose = () => {
     setOpen(false);
     onClose();
@@ -68,7 +78,11 @@ export default function PopupForm() {
   };
 
   useEffect(() => {
-    setOpen(!localStorage.getItem("formSubmitted"));
+    setOpen(!localStorage.getItem("hidePopup"));
+    const buttonContact = document.getElementById("button-contact");
+    buttonContact?.addEventListener("click", handleOpen);
+
+    return () => buttonContact?.removeEventListener("click", handleOpen);
   }, []);
 
   useEffect(() => {
@@ -79,9 +93,9 @@ export default function PopupForm() {
     <div
       className={`fixed inset-0 z-50 overflow-y-auto bg-black/50 transition ${open ? "pointer-events-auto opacity-100" : "pointer-events-none opacity-0"}`}
     >
-      <div className="flex min-h-screen items-center justify-center p-4">
+      <div className="flex min-h-screen flex-col items-center justify-center p-4">
         <div
-          className={`relative h-auto w-full max-w-lg flex-auto overflow-hidden overflow-y-auto rounded-md bg-white p-7 pt-10 shadow-lg transition sm:my-6 sm:pt-7 ${open ? "translate-y-0 opacity-100" : "translate-y-12 opacity-0"}`}
+          className={`relative h-auto w-full max-w-lg rounded-md bg-white p-7 pt-10 shadow-lg transition sm:mt-6 sm:pt-7 ${open ? "translate-y-0 opacity-100" : "translate-y-12 opacity-0"}`}
         >
           <button
             onClick={handleClose}
@@ -196,6 +210,12 @@ export default function PopupForm() {
             </div>
           </form>
         </div>
+        <button
+          onClick={hidePopup}
+          className="mb-6 mt-3 text-sm font-light text-white/90 hover:underline"
+        >
+          Solo estoy de visita
+        </button>
       </div>
     </div>
   );

@@ -10,7 +10,6 @@ import HeroContainer from "@/components/HeroContainer.astro";
 import LaReservaLogo from "@/components/common/LaReservaLogo.astro";
 import Today from "@/components/la-reserva-ii/Today.astro";
 import { DOMAIN_URL } from "astro:env/server";
-import MoreButton from "@/components/common/MoreButton.astro";
 ---
 
 <Layout
@@ -18,14 +17,9 @@ import MoreButton from "@/components/common/MoreButton.astro";
   description="Descubre La Reserva, una urbanización exclusiva que ofrece un estilo de vida único con todas las comodidades y servicios que necesitas. Vive en un entorno seguro y rodeado de naturaleza."
   keywords="la reserva, la reserva ica, la reserva ii, la reserva pb inversiones, la reserva inmobiliaria, la reserva inmobiliaria ica, la reserva inmobiliaria pb inversiones, la reserva inmobiliaria pb inversiones ica"
   opDescription="Donde la exclusividad se encuentra con la naturaleza."
-  opImage={`${DOMAIN_URL}/meta/la-reserva-ii-op.webp`}
+  opImage={`${DOMAIN_URL}/meta/la-reserva-op.webp`}
 >
-  <HeroContainer img="/la-reserva/servicios.webp">
-    <div class="flex flex-col items-center gap-6">
-      <LaReservaLogo class="animate-fadeIn h-auto w-3/4 text-white md:w-96" />
-      <MoreButton />
-    </div>
-  </HeroContainer>
+  <HeroContainer img="/la-reserva/servicios.webp" logo={LaReservaLogo} />
   <Info />
   <Security />
   <Benefits client:visible />

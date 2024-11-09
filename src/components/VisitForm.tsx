@@ -20,7 +20,7 @@ type Inputs = {
   visit_time: string;
 };
 
-const today = new Date().toISOString().split("T")[0];
+const today = new Date().toLocaleDateString("en-CA");
 const currentYear = new Date().getFullYear();
 const nextYear = currentYear + 1;
 const maxDate = `${nextYear}-12-31`;
@@ -43,19 +43,19 @@ export default function VisitForm() {
   const onSubmit: SubmitHandler<Inputs> = async (data) => {
     setLoading(true);
     try {
-      await fetch(`${API_URL}`, {
+      const response = await fetch(`${API_URL}/visit`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify(data),
       });
+      if (!response.ok) throw new Error();
       toast.success("¡Gracias! Te contactaremos pronto.");
       handleClose();
       reset();
     } catch (error) {
       toast.warning("Ocurrió un error. Inténtalo de nuevo.");
-      console.error("Error:", error);
     } finally {
       setLoading(false);
     }

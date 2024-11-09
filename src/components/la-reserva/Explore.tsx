@@ -65,7 +65,7 @@ export default function Explore() {
           </div>
         </div>
 
-        <hr className="mt-20 border-slate-200" />
+        <hr className="border-secondary-light mt-20" />
       </section>
 
       <SketchModal open={open} onClose={handleClose} />

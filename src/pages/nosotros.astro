@@ -1,21 +1,21 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Top from "@/components/index/Top.astro";
-import Info from "@/components/index/Info.astro";
-import Projects from "@/components/index/Projects.astro";
+import Since from "@/components/index/Since.astro";
+import Identity from "@/components/index/Identity.astro";
 import { DOMAIN_URL } from "astro:env/server";
 import Today from "@/components/la-reserva-ii/Today.astro";
 ---
 
 <Layout
-  title="PB Inversiones Inmobiliarias"
+  title="Nosotros | PB Inversiones Inmobiliarias"
   description="Somos una desarrolladora inmobiliaria comprometida con la innovación y satisfacción de nuestros clientes y sus familias."
   keywords="inmobiliaria, propiedades, casas, departamentos, alquiler, venta"
   opDescription="Una empresa del grupo POSBEN."
   opImage={`${DOMAIN_URL}/meta/pbii-op.webp`}
 >
   <Top />
-  <Info />
-  <Projects />
+  <Identity />
+  <Since />
   <Today />
 </Layout>

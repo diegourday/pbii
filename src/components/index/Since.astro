@@ -1,5 +1,6 @@
 ---
 import ArrowRightCircle from "@/icons/ArrowRightCircle.astro";
+import Badge from "@/components/common/Badge.astro";
 
 type Card = {
   img: string;
@@ -34,7 +35,7 @@ const CARDS: Card[] = [
 const sinceYear = new Date().getFullYear() - 1960;
 ---
 
-<section class="mx-auto max-w-[900px] px-6 pt-20 md:pt-28">
+<section class="mx-auto mt-24 max-w-[900px] px-6">
   <h2 class="mb-8 text-center text-2xl font-semibold text-primary">
     Presentes desde hace {sinceYear} años
   </h2>
@@ -49,10 +50,12 @@ const sinceYear = new Date().getFullYear() - 1960;
               alt=""
               class="h-64 w-full object-cover transition group-hover:scale-105 group-hover:brightness-110"
             />
-            <p class="absolute bottom-3 left-3 flex items-center gap-2 rounded-full border border-white bg-white/90 px-4 py-1 font-semibold text-primary transition-all group-hover:left-3 group-hover:opacity-100 md:left-1 md:opacity-0">
-              <ArrowRightCircle class="size-4" />
+            <Badge
+              icon={ArrowRightCircle}
+              class="absolute bottom-3 left-3 transition-all group-hover:left-3 group-hover:opacity-100 md:left-1 md:opacity-0"
+            >
               Desde {year}
-            </p>
+            </Badge>
           </div>
           <h3 class="text-center text-lg font-semibold text-primary">
             {title}
@@ -62,11 +65,3 @@ const sinceYear = new Date().getFullYear() - 1960;
     }
   </div>
 </section>
-
-<!-- <style>
-  article {
-    animation: reveal linear both;
-    animation-timeline: view();
-    animation-range: entry 20% cover 30%;
-  }
-</style> -->

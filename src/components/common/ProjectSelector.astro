@@ -1,0 +1,49 @@
+---
+import ChevronDown from "@/icons/ChevronDown";
+
+const PROJECTS = [
+  { name: "La Reserva", href: "/la-reserva" },
+  { name: "La Reserva II", href: "/la-reserva-ii" },
+  { name: "Palma Real", href: "/palma-real" },
+];
+
+const currentPath = Astro.url.pathname;
+---
+
+<div class="relative inline-block">
+  <div
+    class="group rounded-md bg-black/20 text-white transition-all hover:bg-black/50"
+  >
+    <button
+      type="button"
+      class="inline-flex w-full items-center justify-start gap-x-2 px-3.5 py-2.5"
+      aria-expanded="true"
+      aria-haspopup="true"
+    >
+      Proyectos
+      <ChevronDown
+        className="size-5 transition-transform group-hover:rotate-180"
+      />
+    </button>
+    <ul
+      class="pointer-events-none absolute mt-1.5 min-w-full -translate-y-4 rounded-md bg-white p-1 opacity-0 transition-all group-hover:pointer-events-auto group-hover:translate-y-0 group-hover:opacity-100 md:mt-0 md:bg-transparent md:p-0 md:pt-0.5"
+    >
+      {
+        PROJECTS.map(({ name, href }) => (
+          <li class="py-0.5">
+            <a
+              class={`inline-flex w-full items-center justify-start gap-x-2 rounded-md px-3.5 py-2.5 transition-colors ${
+                currentPath === href
+                  ? "pointer-events-none bg-secondary text-white md:bg-primary"
+                  : "bg-white text-primary hover:bg-secondary hover:text-white md:shadow md:hover:bg-primary"
+              }`}
+              href={href}
+            >
+              {name}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</div>

@@ -3,21 +3,44 @@ import LaReservaIILogo from "@/components/common/LaReservaIILogo.astro";
 import MoreButton from "./common/MoreButton.astro";
 ---
 
-<section
-  class="relative grid h-dvh w-full place-content-center bg-black/20 transition-all"
->
-  <video
-    autoplay
-    loop
-    muted
-    playsinline
-    preload="metadata"
-    class="absolute -z-10 h-full w-full object-cover"
+<section class="bg-primary">
+  <div
+    id="video-section"
+    class="relative z-10 grid h-dvh w-full place-content-center transition-all"
   >
-    <source src="/la-reserva-ii/video.mp4" type="video/mp4" />
-  </video>
-  <div class="flex flex-col items-center gap-6">
-    <LaReservaIILogo class="animate-fadeIn h-auto w-3/4 text-white md:w-96" />
-    <MoreButton />
+    <video
+      autoplay
+      loop
+      muted
+      playsinline
+      preload="metadata"
+      id="video"
+      class="absolute -z-10 hidden h-full w-full object-cover"
+    >
+      <source src="/la-reserva-ii/video.mp4" type="video/mp4" />
+    </video>
+    <div class="flex flex-col items-center gap-6">
+      <LaReservaIILogo class="h-auto w-3/4 text-white md:w-96" />
+      <MoreButton />
+    </div>
   </div>
 </section>
+
+<script>
+  document.addEventListener("astro:page-load", () => {
+    const video = document.getElementById("video") as HTMLMediaElement;
+
+    if (video) {
+      const handleLoadedData = () => {
+        video.classList.remove("hidden");
+        video.classList.add("animate-fade");
+      };
+
+      if (video.readyState >= 3) {
+        handleLoadedData();
+      } else {
+        video.addEventListener("loadeddata", handleLoadedData);
+      }
+    }
+  });
+</script>

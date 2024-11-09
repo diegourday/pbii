@@ -37,6 +37,23 @@ const { title, description, keywords, opDescription, opImage } = Astro.props;
     <meta name="keywords" content={keywords} />
     <meta name="author" content="Diego Urday, Suggestion" />
 
+    <ClientRouter />
+
+    <!-- Google Tag Manager -->
+    <script is:inline>
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != "dataLayer" ? "&l=" + l : "";
+        j.async = true;
+        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, "script", "dataLayer", "GTM-THMCSXQ6");
+    </script>
+    <!-- End Google Tag Manager -->
+
     <!-- Facebook Meta Tags -->
     <meta property="og:url" content={Astro.url} />
     <meta property="og:type" content="website" />
@@ -52,9 +69,33 @@ const { title, description, keywords, opDescription, opImage } = Astro.props;
     <meta name="twitter:description" content={opDescription} />
     <meta name="twitter:image" content={opImage} />
 
-    <ClientRouter />
+    <!-- Google tag (gtag.js) -->
+    <script
+      is:inline
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-EJJ3DBFP05"></script>
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-EJJ3DBFP05");
+    </script>
   </head>
+
   <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript
+      ><iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-THMCSXQ6"
+        height="0"
+        width="0"
+        style="display:none;visibility:hidden"></iframe></noscript
+    >
+    <!-- End Google Tag Manager (noscript) -->
+
     <PopupForm client:load />
     <Toaster
       client:idle
@@ -71,7 +112,6 @@ const { title, description, keywords, opDescription, opImage } = Astro.props;
       <slot />
     </main>
     <ContactDetails />
-    <!-- CONTACT FORM ON PAGE -->
     <ContactForm client:visible />
     <Footer />
     <WhatsAppFixed />
@@ -86,6 +126,11 @@ const { title, description, keywords, opDescription, opImage } = Astro.props;
     --primary-rgba: 21, 65, 66;
     --secondary: #b6a27a;
     --secondary-dark: #a38c5d;
+  }
+
+  ::selection {
+    background-color: #154142e0;
+    color: white;
   }
 
   html {
@@ -114,7 +159,7 @@ const { title, description, keywords, opDescription, opImage } = Astro.props;
   .info-container {
     margin: 0 auto;
     max-width: 600px;
-    padding: 64px 32px 0;
+    padding: 64px 24px 0;
 
     @media (min-width: 768px) {
       padding-top: 80px;
@@ -173,6 +218,15 @@ const { title, description, keywords, opDescription, opImage } = Astro.props;
     font-size: 0.875rem;
     font-weight: 400;
     padding-top: 2px;
+  }
+
+  @keyframes fade {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
   }
 
   @keyframes fadeIn {
@@ -247,11 +301,6 @@ const { title, description, keywords, opDescription, opImage } = Astro.props;
     }
     ::-webkit-scrollbar-thumb:hover {
       background: var(--secondary-dark);
-    }
-
-    ::selection {
-      background-color: #154142e0;
-      color: white;
     }
   }
 </style>

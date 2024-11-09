@@ -5,7 +5,6 @@ import Gallery from "@/components/palma-real/Gallery.astro";
 import HeroContainer from "@/components/HeroContainer.astro";
 import PalmaRealLogo from "@/components/common/PalmaRealLogo.astro";
 import { DOMAIN_URL } from "astro:env/server";
-import MoreButton from "@/components/common/MoreButton.astro";
 ---
 
 <Layout
@@ -13,14 +12,9 @@ import MoreButton from "@/components/common/MoreButton.astro";
   description="Descubre La Reserva, una urbanización exclusiva que ofrece un estilo de vida único con todas las comodidades y servicios que necesitas. Vive en un entorno seguro y rodeado de naturaleza."
   keywords="la reserva, la reserva ica, la reserva ii, la reserva pb inversiones, la reserva inmobiliaria, la reserva inmobiliaria ica, la reserva inmobiliaria pb inversiones, la reserva inmobiliaria pb inversiones ica"
   opDescription="Donde la exclusividad se encuentra con la naturaleza."
-  opImage={`${DOMAIN_URL}/meta/la-reserva-ii-op.webp`}
+  opImage={`${DOMAIN_URL}/meta/palma-real-op.webp`}
 >
-  <HeroContainer img="/palma-real/casa.webp">
-    <div class="animate-fadeIn flex flex-col items-center gap-6">
-      <PalmaRealLogo class="animate-fadeIn h-auto w-3/4 text-white md:w-96" />
-      <MoreButton />
-    </div>
-  </HeroContainer>
+  <HeroContainer img="/palma-real/casa.webp" logo={PalmaRealLogo} />
   <Info />
   <Gallery />
 </Layout>

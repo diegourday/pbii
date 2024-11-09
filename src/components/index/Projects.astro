@@ -3,6 +3,7 @@ import ArrowUpRight from "@/icons/ArrowUpRight.astro";
 import LaReservaIILogo from "../common/LaReservaIILogo.astro";
 import LaReservaLogo from "../common/LaReservaLogo.astro";
 import PalmaRealLogo from "../common/PalmaRealLogo.astro";
+import Badge from "../common/Badge.astro";
 
 type Project = {
   href: string;
@@ -14,19 +15,19 @@ type Project = {
 const PROJECTS: Project[] = [
   {
     href: "/la-reserva",
-    img: "/pbii/la-reserva-casa.webp",
+    img: "/la-reserva/servicios.webp",
     title: "La reserva",
     logo: LaReservaLogo,
   },
   {
     href: "/la-reserva-ii",
-    img: "/pbii/la-reserva-ii-casa.webp",
+    img: "/la-reserva-ii/parque.webp",
     title: "La reserva II",
     logo: LaReservaIILogo,
   },
   {
-    href: "/la-reserva-ii",
-    img: "/pbii/palma-real-casa.webp",
+    href: "/palma-real",
+    img: "/palma-real/casa.webp",
     title: "Palma Real",
     logo: PalmaRealLogo,
   },
@@ -37,21 +38,23 @@ const PROJECTS: Project[] = [
   <h2 class="mb-8 text-center text-2xl font-semibold text-primary">
     Nuestros proyectos
   </h2>
-  <div class="grid gap-6 md:grid-cols-3">
+  <div class="grid gap-x-6 gap-y-8 md:grid-cols-3">
     {
       PROJECTS.map(({ href, img, title, logo: Logo }) => (
-        <a href={href} target="_blank" title={title}>
+        <a href={href} title={title}>
           <article class="group relative overflow-hidden rounded-md transition hover:scale-y-105">
             <div class="relative overflow-hidden">
               <img
                 class="h-[450px] object-cover object-left transition-all duration-[2s] group-hover:object-right group-hover:brightness-110"
                 src={img}
-                alt=""
+                alt={title}
               />
-              <p class="absolute bottom-3 left-1/2 flex -translate-x-1/2 items-center gap-1 rounded-full border border-white bg-white/90 px-4 py-0.5 font-semibold text-primary transition-all delay-0 group-hover:opacity-100 group-hover:delay-200 md:-bottom-3 md:opacity-0 md:group-hover:bottom-3">
-                <ArrowUpRight class="size-5" />
+              <Badge
+                icon={ArrowUpRight}
+                class="absolute bottom-2.5 left-1/2 -translate-x-1/2 transition-all delay-0 group-hover:opacity-100 group-hover:delay-200 md:-bottom-2.5 md:opacity-0 md:group-hover:bottom-2.5"
+              >
                 Visitar
-              </p>
+              </Badge>
             </div>
             <div class="bg-primary p-4 transition-colors group-hover:bg-primary-dark">
               <Logo class="mx-auto h-20 w-auto max-w-36 text-white" />

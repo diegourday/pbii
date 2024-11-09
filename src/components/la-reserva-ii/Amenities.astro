@@ -1,0 +1,50 @@
+---
+import Icon1 from "@/icons/custom/Icon1.astro";
+import Icon2 from "@/icons/custom/Icon2.astro";
+import Icon3 from "@/icons/custom/Icon3.astro";
+import Icon4 from "@/icons/custom/Icon4.astro";
+import Icon5 from "@/icons/custom/Icon5.astro";
+
+type Amenity = {
+  icon: any;
+  text: string;
+};
+
+const AMENITIES: Amenity[] = [
+  {
+    icon: Icon1,
+    text: "Más de 6,000 m² de parques y áreas verdes",
+  },
+  {
+    icon: Icon2,
+    text: "Agua y Alcantarillado",
+  },
+  {
+    icon: Icon3,
+    text: "Pistas asfaltadas y Cerco perimétrico",
+  },
+  {
+    icon: Icon4,
+    text: "Doble pórtico",
+  },
+  {
+    icon: Icon5,
+    text: "Acceso privado y Vigilancia las 24 horas",
+  },
+];
+---
+
+<section class="mx-auto max-w-7xl px-6 pt-16 md:pt-20">
+  <div
+    class="border-secondary-light mx-auto flex w-fit flex-wrap items-center justify-center border-y py-4 md:py-2"
+  >
+    {
+      AMENITIES.map(({ icon: Icon, text }) => (
+        <article class="flex max-w-64 flex-col items-center justify-center gap-3 px-6 py-8">
+          <Icon className="h-10 w-auto stroke-1 text-secondary" />
+          <p class="text-center font-normal text-primary">{text}</p>
+        </article>
+      ))
+    }
+  </div>
+</section>
