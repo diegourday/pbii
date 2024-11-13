@@ -65,9 +65,9 @@ export default function ContactForm() {
       <form onSubmit={handleSubmit(onSubmit)} className="mx-auto max-w-[800px]">
         <div className="flex flex-col gap-6 md:grid md:grid-cols-2">
           <div className="flex flex-col">
-            <label htmlFor="name">Nombres</label>
+            <label htmlFor="c-name">Nombres</label>
             <input
-              id="name"
+              id="c-name"
               type="text"
               placeholder="Nombres"
               className="contactForm__input"
@@ -80,9 +80,9 @@ export default function ContactForm() {
             )}
           </div>
           <div className="flex flex-col">
-            <label htmlFor="dni">DNI</label>
+            <label htmlFor="c-dni">DNI</label>
             <input
-              id="dni"
+              id="c-dni"
               type="text"
               placeholder="DNI"
               className="contactForm__input"
@@ -93,9 +93,9 @@ export default function ContactForm() {
             )}
           </div>
           <div className="flex flex-col">
-            <label htmlFor="phone">Teléfono</label>
+            <label htmlFor="c-phone">Teléfono</label>
             <input
-              id="phone"
+              id="c-phone"
               type="text"
               placeholder="Teléfono"
               className="contactForm__input"
@@ -108,9 +108,9 @@ export default function ContactForm() {
             )}
           </div>
           <div className="flex flex-col">
-            <label htmlFor="email">Email</label>
+            <label htmlFor="c-email">Email</label>
             <input
-              id="email"
+              id="c-email"
               type="email"
               placeholder="Email"
               className="contactForm__input"
@@ -127,9 +127,9 @@ export default function ContactForm() {
             Elija la fecha y hora en la que le gustaría ser contactado.
           </p>
           <div className="flex flex-col">
-            <label htmlFor="contact_date">Fecha</label>
+            <label htmlFor="c-contact_date">Fecha</label>
             <input
-              id="contact_date"
+              id="c-contact_date"
               type="date"
               className="contactForm__input"
               min={today}
@@ -143,9 +143,9 @@ export default function ContactForm() {
             )}
           </div>
           <div className="mb-2 flex flex-col">
-            <label htmlFor="contact_time">Hora</label>
+            <label htmlFor="c-contact_time">Hora</label>
             <input
-              id="contact_time"
+              id="c-contact_time"
               type="time"
               className="contactForm__input"
               {...register("contact_time")}

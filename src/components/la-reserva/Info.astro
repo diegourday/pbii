@@ -1,7 +1,7 @@
 ---
 import HomeCheck from "@/icons/HomeCheck";
-import VisitForm from "../VisitForm";
 import Strong from "../common/Strong.astro";
+import Calendar from "@/icons/Calendar";
 ---
 
 <section id="info" class="info-container">
@@ -28,6 +28,9 @@ import Strong from "../common/Strong.astro";
       <HomeCheck className="size-6" />
       Solicitar Cotización
     </a>
-    <VisitForm client:idle />
+    <button id="button-visit" class="button-secondary">
+      <Calendar className="size-6" />
+      Agendar Visita
+    </button>
   </div>
 </section>

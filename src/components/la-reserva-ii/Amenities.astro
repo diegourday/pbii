@@ -1,9 +1,9 @@
 ---
-import Icon1 from "@/icons/custom/Icon1.astro";
-import Icon2 from "@/icons/custom/Icon2.astro";
-import Icon3 from "@/icons/custom/Icon3.astro";
-import Icon4 from "@/icons/custom/Icon4.astro";
-import Icon5 from "@/icons/custom/Icon5.astro";
+import GreenArea from "@/icons/custom/GreenArea.astro";
+import Water from "@/icons/custom/Water.astro";
+import Surveillance from "@/icons/custom/Surveillance.astro";
+import Highway from "@/icons/custom/Highway.astro";
+import DoublePortico from "@/icons/custom/DoublePortico.astro";
 
 type Amenity = {
   icon: any;
@@ -12,23 +12,23 @@ type Amenity = {
 
 const AMENITIES: Amenity[] = [
   {
-    icon: Icon1,
+    icon: GreenArea,
     text: "Más de 6,000 m² de parques y áreas verdes",
   },
   {
-    icon: Icon2,
+    icon: Water,
     text: "Agua y Alcantarillado",
   },
   {
-    icon: Icon3,
+    icon: Highway,
     text: "Pistas asfaltadas y Cerco perimétrico",
   },
   {
-    icon: Icon4,
+    icon: DoublePortico,
     text: "Doble pórtico",
   },
   {
-    icon: Icon5,
+    icon: Surveillance,
     text: "Acceso privado y Vigilancia las 24 horas",
   },
 ];
@@ -36,7 +36,7 @@ const AMENITIES: Amenity[] = [
 
 <section class="mx-auto max-w-7xl px-6 pt-16 md:pt-20">
   <div
-    class="border-secondary-light mx-auto flex w-fit flex-wrap items-center justify-center border-y py-4 md:py-2"
+    class="mx-auto flex w-fit flex-wrap items-center justify-center border-y border-secondary-light py-4 md:py-2"
   >
     {
       AMENITIES.map(({ icon: Icon, text }) => (

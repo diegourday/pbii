@@ -40,8 +40,8 @@ export default function StrategicModal() {
       className={`fixed inset-0 z-50 grid place-content-center bg-black/50 p-4 backdrop-blur-md transition ${open ? "pointer-events-auto opacity-100" : "pointer-events-none opacity-0"}`}
     >
       <button
-        type="button"
         onClick={handleClose}
+        aria-label="Cerrar modal"
         className="absolute right-4 top-4 z-10 text-white"
       >
         <CloseIcon className="size-6" />

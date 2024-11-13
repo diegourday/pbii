@@ -15,19 +15,19 @@ type Project = {
 const PROJECTS: Project[] = [
   {
     href: "/la-reserva",
-    img: "/la-reserva/servicios.webp",
+    img: "/pbii/la-reserva.webp",
     title: "La reserva",
     logo: LaReservaLogo,
   },
   {
     href: "/la-reserva-ii",
-    img: "/la-reserva-ii/parque.webp",
+    img: "/pbii/la-reserva-ii.webp",
     title: "La reserva II",
     logo: LaReservaIILogo,
   },
   {
     href: "/palma-real",
-    img: "/palma-real/casa.webp",
+    img: "/pbii/palma-real.webp",
     title: "Palma Real",
     logo: PalmaRealLogo,
   },
@@ -41,13 +41,15 @@ const PROJECTS: Project[] = [
   <div class="grid gap-x-6 gap-y-8 md:grid-cols-3">
     {
       PROJECTS.map(({ href, img, title, logo: Logo }) => (
-        <a href={href} title={title}>
+        <a href={href} title={`Ir a la página de ${title}`}>
           <article class="group relative overflow-hidden rounded-md transition hover:scale-y-105">
             <div class="relative overflow-hidden">
               <img
-                class="h-[450px] object-cover object-left transition-all duration-[2s] group-hover:object-right group-hover:brightness-110"
+                class="h-[450px] w-full object-cover object-left transition-all duration-[2s] group-hover:object-right group-hover:brightness-110"
                 src={img}
                 alt={title}
+                width="268"
+                height="450"
               />
               <Badge
                 icon={ArrowUpRight}

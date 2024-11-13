@@ -12,6 +12,7 @@ import StrategicModal from "@/components/la-reserva-ii/StrategicModal";
 import Amenities from "@/components/la-reserva-ii/Amenities.astro";
 import HeroContainer from "@/components/HeroContainer.astro";
 import LaReservaIILogo from "@/components/common/LaReservaIILogo.astro";
+import PopupVisitForm from "@/components/PopupVisitForm";
 ---
 
 <Layout
@@ -21,6 +22,7 @@ import LaReservaIILogo from "@/components/common/LaReservaIILogo.astro";
   opDescription="Donde la exclusividad se encuentra con la naturaleza."
   opImage={`${DOMAIN_URL}/meta/la-reserva-ii-op.webp`}
 >
+  <PopupVisitForm client:idle />
   <HeroContainer img="/la-reserva-ii/parque.webp" logo={LaReservaIILogo} />
   <Amenities />
   <Info />

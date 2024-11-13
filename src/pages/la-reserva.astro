@@ -10,6 +10,7 @@ import HeroContainer from "@/components/HeroContainer.astro";
 import LaReservaLogo from "@/components/common/LaReservaLogo.astro";
 import Today from "@/components/la-reserva-ii/Today.astro";
 import { DOMAIN_URL } from "astro:env/server";
+import PopupVisitForm from "@/components/PopupVisitForm";
 ---
 
 <Layout
@@ -19,6 +20,7 @@ import { DOMAIN_URL } from "astro:env/server";
   opDescription="Donde la exclusividad se encuentra con la naturaleza."
   opImage={`${DOMAIN_URL}/meta/la-reserva-op.webp`}
 >
+  <PopupVisitForm client:idle />
   <HeroContainer img="/la-reserva/servicios.webp" logo={LaReservaLogo} />
   <Info />
   <Security />

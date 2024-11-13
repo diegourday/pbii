@@ -13,6 +13,7 @@ export default function ExploreModal({ open, onClose }: ExploreModalProps) {
     >
       <button
         onClick={onClose}
+        aria-label="Cerrar modal"
         className="absolute right-4 top-4 z-10 text-white"
       >
         <CloseIcon className="size-6" />

@@ -11,7 +11,7 @@ import "@fontsource/poppins/700.css";
 import "@fontsource/poppins/800.css";
 import "../styles/sonner-styles.css";
 import WhatsAppFixed from "@/components/common/WhatsAppFixed.astro";
-import PopupForm from "@/components/PopupForm.tsx";
+import PopupContactForm from "@/components/PopupContactForm";
 import { ClientRouter } from "astro:transitions";
 import { Toaster } from "sonner";
 
@@ -96,7 +96,7 @@ const { title, description, keywords, opDescription, opImage } = Astro.props;
     >
     <!-- End Google Tag Manager (noscript) -->
 
-    <PopupForm client:load />
+    <PopupContactForm client:load />
     <Toaster
       client:idle
       position="top-center"
