@@ -23,7 +23,7 @@ export default function ExploreModal({ open, onClose }: ExploreModalProps) {
         className={`transition ${open ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0"} `}
       >
         <img
-          src="/la-reserva/lotes-detalles.webp"
+          src="/la-reserva/lotes-3d.webp"
           className="max-h-[95svh] rounded-md"
           alt={"Detalles de los lotes de La Reserva"}
         />

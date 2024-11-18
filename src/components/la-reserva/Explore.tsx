@@ -32,7 +32,7 @@ export default function Explore() {
             <div className="absolute inset-0 grid place-items-center bg-primary opacity-0 transition-opacity group-hover/img:opacity-90">
               <p className="flex items-center gap-1.5 text-center font-medium text-white">
                 <Eye className="size-6" />
-                Ver detalles
+                Ver completo
               </p>
             </div>
           </div>
@@ -60,7 +60,7 @@ export default function Explore() {
             </p>
             <button onClick={handleOpen} className="button-primary mx-2">
               <Eye className="size-6" />
-              Ver detalles
+              Ver completo
             </button>
           </div>
         </div>

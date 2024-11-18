@@ -1,20 +1,29 @@
 ---
 import HomeHeart from "@/icons/HomeHeart.astro";
+import Download from "@/icons/Download.astro";
 ---
 
 <section
   class="relative mt-28 flex flex-col bg-[url('/la-reserva-ii/parque-3.webp')] bg-cover bg-fixed bg-center after:absolute after:inset-0 after:bg-primary/80"
 >
   <div
-    class="z-10 m-auto flex flex-col items-center gap-3 px-8 py-12 text-center text-white"
+    class="z-10 m-auto flex flex-col items-center px-8 py-12 text-center text-white"
   >
-    <HomeHeart className="mx-auto size-16 animate-stroke" />
-    <p class="text-center">
+    <HomeHeart className="mx-auto mb-3 size-16 animate-stroke" />
+    <p class="mb-5 text-center">
       <strong class="font-semibold">Disfrute de</strong>
       <span> un entorno diseñado para brindar </span>
       <br class="hidden md:block" />
       <strong class="font-semibold"> confort y seguridad </strong>
       a toda su familia.
     </p>
+    <a
+      href="/la-reserva-ii/brochure-la-reserva-ii.pdf"
+      target="_blank"
+      class="button-secondary"
+    >
+      <Download className="size-6" />
+      Descarga el Brochure aquí
+    </a>
   </div>
 </section>
