@@ -25,8 +25,7 @@ const nextYear = currentYear + 1;
 const maxDate = `${nextYear}-12-31`;
 
 export default function PopupContactForm() {
-  // const [open, setOpen] = useState<boolean | null>(null);
-  const [open, setOpen] = useState<boolean | null>(true);
+  const [open, setOpen] = useState<boolean | null>(null);
   const [loading, setLoading] = useState(false);
 
   const {
