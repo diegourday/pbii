@@ -25,7 +25,8 @@ const nextYear = currentYear + 1;
 const maxDate = `${nextYear}-12-31`;
 
 export default function PopupContactForm() {
-  const [open, setOpen] = useState<boolean | null>(null);
+  // const [open, setOpen] = useState<boolean | null>(null);
+  const [open, setOpen] = useState<boolean | null>(true);
   const [loading, setLoading] = useState(false);
 
   const {
@@ -96,7 +97,7 @@ export default function PopupContactForm() {
     >
       <div className="flex min-h-screen flex-col items-center justify-center p-4">
         <div
-          className={`relative h-auto w-full max-w-lg rounded-md bg-white p-7 pt-10 shadow-lg transition sm:mt-6 sm:pt-7 ${open ? "translate-y-0 opacity-100" : "translate-y-12 opacity-0"}`}
+          className={`relative h-auto w-full max-w-lg rounded-md bg-white p-7 pb-5 pt-10 shadow-lg transition sm:my-6 sm:pt-7 ${open ? "translate-y-0 opacity-100" : "translate-y-12 opacity-0"}`}
         >
           <button
             onClick={handleClose}
@@ -211,13 +212,15 @@ export default function PopupContactForm() {
               <FormButton className="col-span-2" isSubmitting={loading} />
             </div>
           </form>
+          <div className="mt-5 flex justify-center">
+            <button
+              onClick={hidePopup}
+              className="text-sm font-light hover:underline"
+            >
+              Solo estoy de visita
+            </button>
+          </div>
         </div>
-        <button
-          onClick={hidePopup}
-          className="mb-6 mt-3 text-sm font-light text-white/90 hover:underline"
-        >
-          Solo estoy de visita
-        </button>
       </div>
     </div>
   );

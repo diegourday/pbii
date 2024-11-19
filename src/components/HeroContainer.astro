@@ -15,7 +15,7 @@ const { img, logo: Logo } = Astro.props;
   <div class="absolute inset-0 -z-20 bg-primary"></div>
   <img
     id="hero-image"
-    class="absolute -z-10 hidden h-full w-full object-cover object-left"
+    class="absolute -z-10 h-full w-full object-cover object-left"
     src={img}
     alt="PBII Cover"
   />
@@ -25,25 +25,6 @@ const { img, logo: Logo } = Astro.props;
   </div>
   <slot />
 </section>
-
-<!-- <script>
-  document.addEventListener("astro:page-load", () => {
-    const heroImage = document.getElementById("hero-image") as HTMLImageElement;
-
-    if (heroImage) {
-      const handleImageLoad = () => {
-        heroImage.classList.remove("hidden");
-        heroImage.classList.add("animate-fade");
-      };
-
-      if (heroImage.complete) {
-        handleImageLoad();
-      } else {
-        heroImage.addEventListener("load", handleImageLoad);
-      }
-    }
-  });
-</script> -->
 
 <style>
   @keyframes slide {
