@@ -4,7 +4,7 @@ import MapPin from "@/icons/MapPin.tsx";
 import Road from "@/icons/Road.astro";
 import Badge from "@/components/common/Badge.astro";
 import Eye from "@/icons/Eye";
-import InfoIcon from "@/icons/Info.astro";
+import HomeSpark from "@/icons/HomeSpark.astro";
 ---
 
 <section class="mx-auto mt-20 max-w-7xl px-6 md:mt-28">
@@ -12,20 +12,12 @@ import InfoIcon from "@/icons/Info.astro";
     <div
       class="group relative order-2 overflow-hidden rounded-md shadow-primary/15 md:order-1"
     >
+      <Badge icon={HomeSpark} class="absolute left-3 top-3">Desde 210 m²</Badge>
       <img
-        class="h-72 object-cover transition-transform md:h-auto"
+        class="h-full object-cover transition-transform md:h-auto"
         src="/la-reserva-ii/ubicacion.webp"
         alt="Lotes de La Reserva - PB Inversiones Inmobiliarias"
       />
-      <button
-        id="button-strategic"
-        type="button"
-        class="absolute bottom-4 left-1/2 flex -translate-x-1/2 items-center gap-1.5 rounded-md bg-primary px-4 py-2.5 text-sm text-white transition-all hover:bg-primary-dark md:-bottom-10 md:opacity-0 md:group-hover:bottom-3 md:group-hover:opacity-100"
-      >
-        <Eye className="size-5" />
-        Ver detalles
-      </button>
-      <Badge icon={InfoIcon} class="absolute left-3 top-3">Desde 210 m²</Badge>
     </div>
 
     <div class="order-1 flex flex-col">
@@ -64,6 +56,10 @@ import InfoIcon from "@/icons/Info.astro";
           </p>
         </li>
       </ul>
+      <button id="button-strategic" class="button-primary mx-2 mt-6">
+        <Eye className="size-6" />
+        Ver detalles
+      </button>
     </div>
   </div>
 

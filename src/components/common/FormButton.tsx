@@ -14,7 +14,7 @@ export default function FormButton({
     <button
       type="submit"
       disabled={isSubmitting}
-      className={`flex h-12 items-center justify-center gap-1.5 bg-primary px-6 text-white transition ${isSubmitting ? "opacity-50" : "hover:scale-[1.03] hover:bg-primary-dark active:scale-100"} ${className}`}
+      className={`flex h-12 items-center justify-center gap-1.5 rounded-md bg-primary px-6 text-white transition ${isSubmitting ? "opacity-50" : "hover:scale-[1.03] hover:bg-primary-dark active:scale-100"} ${className}`}
     >
       {isSubmitting ? (
         <>

@@ -1,0 +1,48 @@
+---
+import Tag from "@/icons/Tag.tsx";
+import CircleCheck from "@/icons/CircleCheck.tsx";
+import Star from "@/icons/Star.tsx";
+
+const { variant } = Astro.props;
+
+let colorClass, message;
+
+switch (variant) {
+  case "launch":
+    colorClass = {
+      bg: "bg-red-100",
+      text: "text-red-800",
+    };
+    message = "Lanzamiento";
+    break;
+  case "forsale":
+    colorClass = {
+      bg: "bg-green-100",
+      text: "text-green-800",
+    };
+    message = "En venta";
+    break;
+  case "sold":
+  default:
+    colorClass = {
+      bg: "bg-blue-100",
+      text: "text-blue-800",
+    };
+    message = "Vendido 100%";
+}
+---
+
+<span
+  class={`flex items-center gap-1.5 text-nowrap rounded-md ${colorClass.bg} px-3 py-1.5 text-sm font-medium ${colorClass.text}`}
+>
+  {
+    message === "En venta" ? (
+      <Tag className="stroke-[1.5] size-5" />
+    ) : message === "Vendido 100%" ? (
+      <CircleCheck className="stroke-[1.5] size-5" />
+    ) : (
+      <Star className="stroke-[1.5] size-5" />
+    )
+  }
+  {message}
+</span>

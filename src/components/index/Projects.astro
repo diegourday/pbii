@@ -4,12 +4,14 @@ import LaReservaIILogo from "../common/LaReservaIILogo.astro";
 import LaReservaLogo from "../common/LaReservaLogo.astro";
 import PalmaRealLogo from "../common/PalmaRealLogo.astro";
 import Badge from "../common/Badge.astro";
+import BadgeProject from "../common/BadgeProject.astro";
 
 type Project = {
   href: string;
   img: string;
   title: string;
   logo: any;
+  badge: "sold" | "forsale" | "launch";
 };
 
 const PROJECTS: Project[] = [
@@ -18,18 +20,21 @@ const PROJECTS: Project[] = [
     img: "/pbii/la-reserva.webp",
     title: "La reserva",
     logo: LaReservaLogo,
+    badge: "sold",
   },
   {
     href: "/la-reserva-ii",
     img: "/pbii/la-reserva-ii.webp",
     title: "La reserva II",
     logo: LaReservaIILogo,
+    badge: "forsale",
   },
   {
     href: "/palma-real",
     img: "/pbii/palma-real.webp",
     title: "Palma Real",
     logo: PalmaRealLogo,
+    badge: "sold",
   },
 ];
 ---
@@ -40,7 +45,7 @@ const PROJECTS: Project[] = [
   </h2>
   <div class="grid gap-x-6 gap-y-8 md:grid-cols-3">
     {
-      PROJECTS.map(({ href, img, title, logo: Logo }) => (
+      PROJECTS.map(({ href, img, title, logo: Logo, badge }) => (
         <a href={href} title={`Ir a la página de ${title}`}>
           <article class="group relative overflow-hidden rounded-md transition hover:scale-y-105">
             <div class="relative overflow-hidden">
@@ -51,12 +56,12 @@ const PROJECTS: Project[] = [
                 width="268"
                 height="450"
               />
-              <Badge
-                icon={ArrowUpRight}
-                class="absolute bottom-2.5 left-1/2 -translate-x-1/2 transition-all delay-0 group-hover:opacity-100 group-hover:delay-200 md:-bottom-2.5 md:opacity-0 md:group-hover:bottom-2.5"
-              >
-                Visitar
-              </Badge>
+              <div class="absolute bottom-2.5 left-1/2 -translate-x-1/2 transition-all delay-0 group-hover:opacity-100 group-hover:delay-200 md:-bottom-2.5 md:opacity-0 md:group-hover:bottom-2.5">
+                <Badge icon={ArrowUpRight}>Visitar</Badge>
+              </div>
+              <div class="absolute left-1/2 top-3 -translate-x-1/2">
+                <BadgeProject variant={badge} />
+              </div>
             </div>
             <div class="bg-primary p-4 transition-colors group-hover:bg-primary-dark">
               <Logo class="mx-auto h-20 w-auto max-w-36 text-white" />

@@ -42,18 +42,18 @@ export default function Explore() {
               Explore La Reserva
             </h2>
             <p className="mb-4 font-light">
-              <strong className="font-semibold text-primary">Descubra</strong>{" "}
-              la distribución de los lotes en{" "}
-              <strong className="font-semibold text-primary">La Reserva</strong>{" "}
-              y encuentre{" "}
-              <strong className="font-semibold text-primary">
+              <strong className="font-medium text-primary">Descubra</strong> la
+              distribución de los lotes en{" "}
+              <strong className="font-medium text-primary">La Reserva</strong> y
+              encuentre{" "}
+              <strong className="font-medium text-primary">
                 el lugar perfecto
               </strong>{" "}
               para su nuevo hogar.
             </p>
             <p className="mb-6 font-light">
               Cada lote ha sido{" "}
-              <strong className="font-semibold text-primary">
+              <strong className="font-medium text-primary">
                 cuidadosamente planificado
               </strong>{" "}
               para ofrecerte la mejor experiencia de vida.

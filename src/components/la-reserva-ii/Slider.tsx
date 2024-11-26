@@ -36,15 +36,15 @@ export default function Slider() {
         }}
         className="h-full rounded-2xl bg-contain bg-center bg-no-repeat duration-500"
       >
-        <div className="absolute grid h-full w-full grid-cols-2">
+        <div className="absolute grid h-full w-full grid-cols-2 gap-x-40">
           <div onClick={prevSlide} className="group cursor-pointer">
             <div className="absolute left-0 top-1/2 -translate-x-0 -translate-y-1/2 cursor-pointer rounded-full bg-black/20 p-2 transition md:left-5 md:group-hover:-translate-x-2 md:group-hover:bg-black/30">
-              <ChevronLeft className="size-6 text-white md:size-12" />
+              <ChevronLeft className="size-6 text-white md:size-10" />
             </div>
           </div>
           <div onClick={nextSlide} className="group cursor-pointer">
             <div className="absolute right-0 top-1/2 -translate-x-0 -translate-y-1/2 cursor-pointer rounded-full bg-black/20 p-2 transition md:right-5 md:group-hover:translate-x-2 md:group-hover:bg-black/30">
-              <ChevronRight className="size-6 text-white md:size-12" />
+              <ChevronRight className="size-6 text-white md:size-10" />
             </div>
           </div>
         </div>

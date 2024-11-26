@@ -1,5 +1,32 @@
 ---
 import Heart from "@/icons/Heart.astro";
+
+const IMAGES = [
+  {
+    src: "/la-reserva-ii/parque-6.webp",
+    alt: "",
+  },
+  {
+    src: "/la-reserva-ii/parque-2.webp",
+    alt: "",
+  },
+  {
+    src: "/la-reserva-ii/parque-1.webp",
+    alt: "",
+  },
+  {
+    src: "/la-reserva-ii/parque-5.webp",
+    alt: "",
+  },
+  {
+    src: "/la-reserva-ii/parque-4.webp",
+    alt: "",
+  },
+  {
+    src: "/la-reserva-ii/parque-3.webp",
+    alt: "",
+  },
+];
 ---
 
 <section class="mx-auto mt-20 max-w-[1200px] px-6">
@@ -19,26 +46,15 @@ import Heart from "@/icons/Heart.astro";
   </div>
 
   <div class="flex flex-col items-center gap-4">
-    <img
-      class="h-96 max-w-full rounded-md object-cover transition hover:saturate-150"
-      src="/la-reserva-ii/parque-3.webp"
-      alt="Áreas recreativas y verdes en la urbanización La Reserva II"
-    />
-    <img
-      class="h-96 max-w-full rounded-md object-cover transition hover:saturate-150"
-      src="/la-reserva-ii/caminata.webp"
-      alt="Caminatas en La Reserva II"
-    />
-    <img
-      class="h-96 max-w-full rounded-md object-cover transition hover:saturate-150"
-      src="/la-reserva-ii/fogata.webp"
-      alt="Lotes en venta en Ica, urbanización La Reserva II"
-    />
-    <img
-      class="h-96 max-w-full rounded-md object-cover transition hover:saturate-150"
-      src="/la-reserva-ii/mirador.webp"
-      alt="Vista panorámica desde el mirador en La Reserva II, Ica"
-    />
+    {
+      IMAGES.map(({ src, alt }) => (
+        <img
+          class="h-[450px] max-w-full rounded-md object-cover transition hover:saturate-150"
+          src={src}
+          alt={alt}
+        />
+      ))
+    }
   </div>
 </section>
 

@@ -13,6 +13,7 @@ import Amenities from "@/components/la-reserva-ii/Amenities.astro";
 import HeroContainer from "@/components/HeroContainer.astro";
 import LaReservaIILogo from "@/components/common/LaReservaIILogo.astro";
 import PopupVisitForm from "@/components/PopupVisitForm";
+import HeroVideo from "@/components/HeroVideo.astro";
 ---
 
 <Layout
@@ -23,7 +24,8 @@ import PopupVisitForm from "@/components/PopupVisitForm";
   opImage={`${DOMAIN_URL}/meta/la-reserva-ii-op.webp`}
 >
   <PopupVisitForm client:idle />
-  <HeroContainer img="/la-reserva-ii/parque.webp" logo={LaReservaIILogo} />
+  <!-- <HeroContainer img="/la-reserva-ii/parque.webp" logo={LaReservaIILogo} /> -->
+  <HeroVideo />
   <Amenities />
   <Info />
   <Ideal />
