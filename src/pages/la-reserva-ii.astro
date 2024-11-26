@@ -10,8 +10,6 @@ import Today from "@/components/la-reserva-ii/Today.astro";
 import { DOMAIN_URL } from "astro:env/server";
 import StrategicModal from "@/components/la-reserva-ii/StrategicModal";
 import Amenities from "@/components/la-reserva-ii/Amenities.astro";
-import HeroContainer from "@/components/HeroContainer.astro";
-import LaReservaIILogo from "@/components/common/LaReservaIILogo.astro";
 import PopupVisitForm from "@/components/PopupVisitForm";
 import HeroVideo from "@/components/HeroVideo.astro";
 ---
@@ -24,7 +22,6 @@ import HeroVideo from "@/components/HeroVideo.astro";
   opImage={`${DOMAIN_URL}/meta/la-reserva-ii-op.webp`}
 >
   <PopupVisitForm client:idle />
-  <!-- <HeroContainer img="/la-reserva-ii/parque.webp" logo={LaReservaIILogo} /> -->
   <HeroVideo />
   <Amenities />
   <Info />
