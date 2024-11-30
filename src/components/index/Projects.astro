@@ -11,6 +11,7 @@ type Project = {
   img: string;
   title: string;
   logo: any;
+  from: string;
   badge: "sold" | "forsale" | "launch";
 };
 
@@ -20,6 +21,7 @@ const PROJECTS: Project[] = [
     img: "/pbii/la-reserva.webp",
     title: "La reserva",
     logo: LaReservaLogo,
+    from: "200",
     badge: "sold",
   },
   {
@@ -27,6 +29,7 @@ const PROJECTS: Project[] = [
     img: "/pbii/la-reserva-ii.webp",
     title: "La reserva II",
     logo: LaReservaIILogo,
+    from: "210",
     badge: "forsale",
   },
   {
@@ -34,6 +37,7 @@ const PROJECTS: Project[] = [
     img: "/pbii/palma-real.webp",
     title: "Palma Real",
     logo: PalmaRealLogo,
+    from: "250",
     badge: "sold",
   },
 ];
@@ -45,25 +49,31 @@ const PROJECTS: Project[] = [
   </h2>
   <div class="grid gap-x-6 gap-y-8 md:grid-cols-3">
     {
-      PROJECTS.map(({ href, img, title, logo: Logo, badge }) => (
+      PROJECTS.map(({ href, img, title, logo: Logo, from, badge }) => (
         <a href={href} title={`Ir a la página de ${title}`}>
-          <article class="group relative overflow-hidden rounded-md transition hover:scale-y-105">
-            <div class="relative overflow-hidden">
+          <article class="group relative overflow-hidden transition hover:scale-y-105">
+            <div class="relative flex flex-col items-center overflow-hidden">
               <img
-                class="h-[450px] w-full object-cover object-left transition-all duration-[2s] group-hover:object-right group-hover:brightness-110"
+                class="h-[450px] w-full rounded-md object-cover object-left transition-all duration-[2s] group-hover:object-right group-hover:brightness-110"
                 src={img}
                 alt={title}
                 width="268"
                 height="450"
               />
-              <div class="absolute bottom-2.5 left-1/2 -translate-x-1/2 transition-all delay-0 group-hover:opacity-100 group-hover:delay-200 md:-bottom-2.5 md:opacity-0 md:group-hover:bottom-2.5">
-                <Badge icon={ArrowUpRight}>Visitar</Badge>
-              </div>
               <div class="absolute left-1/2 top-3 -translate-x-1/2">
                 <BadgeProject variant={badge} />
               </div>
+              <span class="absolute bottom-3 rounded-full bg-white/90 px-4 py-2 text-sm font-medium text-primary transition-all group-hover:bottom-0 group-hover:scale-90 group-hover:opacity-0">
+                Lotes desde {from}m²
+              </span>
+              <Badge
+                icon={ArrowUpRight}
+                class="absolute bottom-0 scale-90 opacity-0 transition-all delay-0 group-hover:bottom-3 group-hover:scale-100 group-hover:opacity-100 group-hover:delay-300"
+              >
+                Visitar
+              </Badge>
             </div>
-            <div class="bg-primary p-4 transition-colors group-hover:bg-primary-dark">
+            <div class="mt-1 w-full rounded-md bg-primary p-4">
               <Logo class="mx-auto h-20 w-auto max-w-36 text-white" />
             </div>
           </article>
