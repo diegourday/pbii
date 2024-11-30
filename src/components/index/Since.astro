@@ -10,23 +10,23 @@ type Card = {
 
 const CARDS: Card[] = [
   {
-    img: "automotriz.webp",
+    img: "logo-automotriz.webp",
     title: "Automotriz",
     year: "2007",
   },
   {
-    img: "inmobiliaria.webp",
+    img: "logo-inmobiliaria.webp",
     title: "Inmobiliaria",
     year: "2017",
   },
 
   {
-    img: "agricola.webp",
+    img: "logo-agricola.webp",
     title: "Agrícola",
     year: "1960",
   },
   {
-    img: "combustibles.webp",
+    img: "logo-combustibles.webp",
     title: "Combustibles y Lubricantes",
     year: "1998",
   },
@@ -35,31 +35,25 @@ const CARDS: Card[] = [
 const sinceYear = new Date().getFullYear() - 1960;
 ---
 
-<section class="mx-auto mt-24 max-w-[900px] px-6">
+<section class="mx-auto mt-24 max-w-[800px] px-6">
   <h2 class="mb-8 text-center text-2xl font-semibold text-primary">
     Presentes desde hace {sinceYear} años
   </h2>
-
-  <div class="grid gap-x-6 gap-y-8 md:grid-cols-2">
+  <div class="grid md:grid-cols-2">
     {
       CARDS.map(({ img, title, year }) => (
-        <article class="group overflow-hidden rounded-md">
-          <div class="relative mb-3 overflow-hidden rounded-md">
+        <article class="relative flex flex-col items-center overflow-hidden rounded-md py-4">
+          <div class="flex size-48 items-center rounded-md">
             <img
               src={`/pbii/${img}`}
-              alt=""
-              class="h-64 w-full object-cover transition group-hover:scale-105 group-hover:brightness-110"
+              alt={`Logo de ${title}`}
+              class="h-auto w-full object-contain transition"
             />
-            <Badge
-              icon={ArrowRightCircle}
-              class="absolute bottom-3 left-3 transition-all group-hover:left-3 group-hover:opacity-100 md:left-1 md:opacity-0"
-            >
-              Desde {year}
-            </Badge>
           </div>
-          <h3 class="text-center text-lg font-semibold text-primary">
+          <h3 class="mb-2 text-center text-lg font-semibold text-primary">
             {title}
           </h3>
+          <span class="text-sm text-slate-800">Desde {year}</span>
         </article>
       ))
     }
