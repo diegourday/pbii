@@ -2,14 +2,13 @@
 import Pin from "@/icons/Pin.astro";
 import Phone from "@/icons/Phone";
 import Mail from "@/icons/Mail";
-import Clock from "@/icons/Clock";
 ---
 
 <section
   id="informacion"
-  class="grid w-full bg-primary md:h-[500px] md:grid-cols-[2fr_1fr]"
+  class="mx-auto grid w-full max-w-screen-2xl gap-x-6 md:h-[450px] md:grid-cols-[4fr_1fr] md:px-6"
 >
-  <div class="order-2 h-96 md:order-1 md:h-auto">
+  <div class="order-2 h-96 overflow-hidden md:order-1 md:h-auto md:rounded-md">
     <iframe
       src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1935.2142575144203!2d-75.76533342354054!3d-14.05185483913632!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9110e3c55d585f5b%3A0x925b85a8d45daea2!2sInversiones%20Inmobiliarias%20PB%20S.A.C.!5e0!3m2!1ses-419!2spe!4v1728894294812!5m2!1ses-419!2spe"
       width="100%"
@@ -23,16 +22,10 @@ import Clock from "@/icons/Clock";
     </iframe>
   </div>
 
-  <div
-    class="order-1 flex items-center justify-center bg-[url('/la-reserva/contact-bg.webp')] bg-cover bg-fixed bg-center text-white md:order-2 md:p-10"
-  >
-    <div class="w-full bg-primary/95 px-6 py-12 md:px-8 md:py-8">
+  <div class="order-1 flex items-center justify-center text-white md:order-2">
+    <div class="w-full bg-primary px-6 py-12 md:rounded-md md:px-8 md:py-8">
       <h2 class="mb-6 text-center text-2xl font-semibold">Datos de contacto</h2>
       <div class="flex flex-col gap-3 md:items-start">
-        <p class="contact-item attention">
-          <Clock className="size-5" />
-          8:00 AM - 6:00 PM de Lunes a Sábado
-        </p>
         <a
           href="https://maps.app.goo.gl/mSUp3kyZy8uXmc2B7"
           target="_blank"
@@ -72,14 +65,6 @@ import Clock from "@/icons/Clock";
     &:hover {
       background-color: rgba(255, 255, 255, 1);
       color: #222;
-    }
-  }
-
-  .attention {
-    background: rgba(255, 255, 255, 0.15);
-    &:hover {
-      background-color: rgba(255, 255, 255, 0.15);
-      color: inherit;
     }
   }
 </style>
