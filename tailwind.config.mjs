@@ -10,6 +10,9 @@ export default {
         secondary: "#B6A27A",
         "secondary-light": "#DBC18D",
         "secondary-dark": "#A38C5D",
+        home: "#0160A8",
+        "home-light": "#218CDC",
+        "home-dark": "#004C85",
       },
       transitionDuration: {
         DEFAULT: "300ms",

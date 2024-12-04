@@ -15,9 +15,9 @@ const BenefitModal: FC<BenefitModalProps> = ({
       <button
         onClick={onClose}
         aria-label="Cerrar modal"
-        className="absolute right-4 top-4 z-10 text-white"
+        className="absolute right-4 top-4 z-10"
       >
-        <CloseIcon className="size-6" />
+        <CloseIcon className="size-6 text-white" />
       </button>
       <div className="flex min-h-screen items-center justify-center p-4">
         <div

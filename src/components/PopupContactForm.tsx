@@ -10,6 +10,10 @@ import FormButton from "./common/FormButton";
 import { onClose, onOpen } from "@/utils/ModalOptions";
 import PbiiLogo from "./common/PbiiLogo";
 
+interface Props {
+  color?: string;
+}
+
 type Inputs = {
   name: string;
   dni: string;
@@ -24,7 +28,7 @@ const currentYear = new Date().getFullYear();
 const nextYear = currentYear + 1;
 const maxDate = `${nextYear}-12-31`;
 
-export default function PopupContactForm() {
+export default function PopupContactForm({ color }: Props) {
   const [open, setOpen] = useState<boolean | null>(null);
   const [loading, setLoading] = useState(false);
 
@@ -101,11 +105,11 @@ export default function PopupContactForm() {
           <button
             onClick={handleClose}
             aria-label="Cerrar formulario"
-            className="absolute right-4 top-4 text-primary"
+            className="absolute right-4 top-4"
           >
             <CloseIcon className="size-6" />
           </button>
-          <PbiiLogo className="mx-auto mb-4 h-8 text-primary" />
+          <PbiiLogo className={`mx-auto mb-4 h-8 text-${color}`} />
           <p className="mb-4 text-center text-sm font-light text-slate-700">
             La casa de sus sueños a un formulario de distancia.
           </p>
@@ -174,7 +178,9 @@ export default function PopupContactForm() {
                   </p>
                 )}
               </div>
-              <p className="col-span-2 flex gap-1 text-sm font-semibold text-primary">
+              <p
+                className={`col-span-2 flex gap-1 text-sm font-semibold text-${color}`}
+              >
                 <CalendarTime className="size-5 flex-shrink-0" />
                 Elija la fecha y hora en la que le gustaría ser contactado.
               </p>
@@ -208,7 +214,11 @@ export default function PopupContactForm() {
                   </p>
                 )}
               </div>
-              <FormButton className="col-span-2" isSubmitting={loading} />
+              <FormButton
+                className="col-span-2"
+                isSubmitting={loading}
+                color={color}
+              />
             </div>
           </form>
           <div className="mt-5 flex justify-center">

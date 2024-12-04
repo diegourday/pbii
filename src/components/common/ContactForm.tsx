@@ -7,6 +7,10 @@ import FormButton from "./FormButton";
 import { useState } from "react";
 import { toast } from "sonner";
 
+interface Props {
+  color?: string;
+}
+
 type Inputs = {
   name: string;
   dni: string;
@@ -21,7 +25,7 @@ const currentYear = new Date().getFullYear();
 const nextYear = currentYear + 1;
 const maxDate = `${nextYear}-12-31`;
 
-export default function ContactForm() {
+export default function ContactForm({ color }: Props) {
   const [loading, setLoading] = useState(false);
 
   const {
@@ -59,7 +63,7 @@ export default function ContactForm() {
       id="formulario-de-contacto"
       className="mx-auto max-w-[1200px] px-6 py-20 md:py-24"
     >
-      <h2 className="mb-6 text-center text-2xl font-semibold text-primary">
+      <h2 className={`mb-6 text-center text-2xl font-semibold text-${color}`}>
         Su futuro hogar le espera
       </h2>
       <form onSubmit={handleSubmit(onSubmit)} className="mx-auto max-w-[800px]">
@@ -122,7 +126,9 @@ export default function ContactForm() {
               </p>
             )}
           </div>
-          <p className="col-span-2 flex gap-1 text-sm font-semibold text-primary">
+          <p
+            className={`col-span-2 flex gap-1 text-sm font-semibold text-${color}`}
+          >
             <CalendarTime className="size-5 flex-shrink-0" />
             Elija la fecha y hora en la que le gustaría ser contactado.
           </p>
@@ -157,7 +163,7 @@ export default function ContactForm() {
             )}
           </div>
           <div className="hidden md:block"></div>
-          <FormButton isSubmitting={loading} />
+          <FormButton isSubmitting={loading} color={color} />
         </div>
       </form>
     </section>

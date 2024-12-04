@@ -1,1 +1,9 @@
-<strong class="font-medium text-primary"><slot /></strong>
+---
+interface Props {
+  color?: string;
+}
+
+const { color = "primary" } = Astro.props;
+---
+
+<strong class={`font-medium text-${color}`}><slot /></strong>

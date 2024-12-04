@@ -4,11 +4,17 @@ import PbiiLogo2 from "./PbiiLogo2.astro";
 import Instagram from "@/icons/Instagram";
 import WhatsApp from "@/icons/WhatsApp";
 import WhatsAppLink from "./WhatsAppLink.astro";
+
+interface Props {
+  color?: string;
+}
+
+const { color = "primary" } = Astro.props;
 ---
 
 <footer>
   <div
-    class="flex flex-col items-center justify-center gap-5 bg-primary px-4 pb-6 pt-8 text-white"
+    class={`flex flex-col items-center justify-center gap-5 bg-${color} px-4 pb-6 pt-8 text-white`}
   >
     <a
       href="/"
@@ -24,7 +30,7 @@ import WhatsAppLink from "./WhatsAppLink.astro";
         aria-label="Ir al Facebook de PB Inversiones Inmobiliarias"
         class="flex items-center gap-1 rounded-full bg-white/90 p-1 transition-all hover:scale-110 hover:bg-white"
       >
-        <Facebook className="size-6 text-primary" />
+        <Facebook className={`size-6 text-${color}`} />
       </a>
       <a
         href="https://instagram.com/pbinmobiliariaica"
@@ -33,16 +39,16 @@ import WhatsAppLink from "./WhatsAppLink.astro";
         aria-label="Ir al Instagram de PB Inversiones Inmobiliarias"
         class="flex items-center gap-1 rounded-full bg-white/90 p-1 transition-all hover:scale-110 hover:bg-white"
       >
-        <Instagram className="size-6 text-primary" />
+        <Instagram className={`size-6 text-${color}`} />
       </a>
       <WhatsAppLink
         class="flex items-center gap-1 rounded-full bg-white/90 p-1 transition-all hover:scale-110 hover:bg-white"
       >
-        <WhatsApp className="size-6 text-primary" />
+        <WhatsApp className={`size-6 text-${color}`} />
       </WhatsAppLink>
     </div>
   </div>
-  <p class="bg-primary-dark py-4 text-center text-sm text-white">
+  <p class={`bg-${color}-dark py-4 text-center text-sm text-white`}>
     © {new Date().getFullYear()} | Desarrollado por Suggestion.
   </p>
 </footer>

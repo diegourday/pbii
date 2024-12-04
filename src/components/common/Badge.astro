@@ -8,7 +8,7 @@ const { class: className = "", icon: Icon } = Astro.props;
 ---
 
 <span
-  class={`flex items-center gap-2 rounded-full border border-white bg-white/90 px-4 py-1 font-medium text-primary ${className}`}
+  class={`flex items-center gap-2 rounded-full border border-white bg-white/90 px-4 py-1 font-medium ${className}`}
 >
   {Icon && <Icon class="size-5" />}
   <slot />

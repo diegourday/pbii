@@ -42,9 +42,9 @@ export default function StrategicModal() {
       <button
         onClick={handleClose}
         aria-label="Cerrar modal"
-        className="absolute right-4 top-4 z-10 text-white"
+        className="absolute right-4 top-4 z-10"
       >
-        <CloseIcon className="size-6" />
+        <CloseIcon className="size-6 text-white" />
       </button>
       <div
         onClick={(e) => e.stopPropagation()}

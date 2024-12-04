@@ -1,6 +1,10 @@
 ---
 import ChevronDown from "@/icons/ChevronDown";
 
+interface Props {
+  color?: string;
+}
+
 const PROJECTS = [
   { name: "La Reserva", href: "/la-reserva/" },
   { name: "La Reserva II", href: "/la-reserva-ii/" },
@@ -8,6 +12,7 @@ const PROJECTS = [
 ];
 
 const currentPath = Astro.url.pathname;
+const { color = "primary" } = Astro.props;
 ---
 
 <div class="relative inline-block">
@@ -34,8 +39,8 @@ const currentPath = Astro.url.pathname;
             <a
               class={`inline-flex w-full items-center justify-start gap-x-2 rounded-md px-3.5 py-2.5 transition-colors ${
                 currentPath === href
-                  ? "pointer-events-none bg-secondary text-white md:bg-primary"
-                  : "bg-white text-primary hover:bg-secondary hover:text-white md:shadow md:hover:bg-primary"
+                  ? `pointer-events-none bg-secondary text-white md:bg-${color}`
+                  : `bg-white text-${color} ${color === "primary" ? "hover:bg-secondary" : "hover:bg-home"} hover:text-white md:shadow md:hover:bg-${color}`
               }`}
               href={href}
             >

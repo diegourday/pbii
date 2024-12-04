@@ -44,7 +44,7 @@ const PROJECTS: Project[] = [
 ---
 
 <section class="mx-auto max-w-[900px] px-6 pt-20">
-  <h2 class="mb-8 text-center text-2xl font-semibold text-primary">
+  <h2 class="mb-8 text-center text-2xl font-semibold text-home">
     Nuestros proyectos
   </h2>
   <div class="grid gap-x-6 gap-y-8 md:grid-cols-3">
@@ -63,17 +63,17 @@ const PROJECTS: Project[] = [
               <div class="absolute left-1/2 top-3 -translate-x-1/2">
                 <BadgeProject variant={badge} />
               </div>
-              <span class="absolute bottom-3 rounded-full bg-white/90 px-4 py-2 text-sm font-medium text-primary transition-all group-hover:bottom-0 group-hover:scale-90 group-hover:opacity-0">
+              <span class="absolute bottom-3 rounded-full bg-white/90 px-4 py-2 text-sm font-medium text-home transition-all group-hover:bottom-0 group-hover:scale-90 group-hover:opacity-0">
                 Lotes desde {from} m²
               </span>
               <Badge
                 icon={ArrowUpRight}
-                class="absolute bottom-0 scale-90 opacity-0 transition-all delay-0 group-hover:bottom-3 group-hover:scale-100 group-hover:opacity-100 group-hover:delay-300"
+                class="group-hover:delay-30 absolute bottom-0 scale-90 text-home opacity-0 transition-all delay-0 group-hover:bottom-3 group-hover:scale-100 group-hover:opacity-100"
               >
                 Visitar
               </Badge>
             </div>
-            <div class="mt-1 w-full rounded-md bg-primary p-4">
+            <div class="mt-1 w-full rounded-md bg-home p-4">
               <Logo class="mx-auto h-20 w-auto max-w-36 text-white" />
             </div>
           </article>

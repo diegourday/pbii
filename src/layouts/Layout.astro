@@ -2,7 +2,7 @@
 import Footer from "../components/common/Footer.astro";
 import Header from "../components/common/Header.astro";
 import ContactForm from "@/components/common/ContactForm.tsx";
-import ContactDetails from "@/components/common/ContactDetails.astro";
+import ContactInfo from "@/components/common/ContactInfo.astro";
 import "@fontsource/poppins/300.css";
 import "@fontsource/poppins/400.css";
 import "@fontsource/poppins/500.css";
@@ -14,6 +14,7 @@ import WhatsAppFixed from "@/components/common/WhatsAppFixed.astro";
 import PopupContactForm from "@/components/PopupContactForm";
 import { ClientRouter } from "astro:transitions";
 import { Toaster } from "sonner";
+import Today from "@/components/la-reserva-ii/Today.astro";
 
 interface Props {
   title: string;
@@ -24,6 +25,10 @@ interface Props {
 }
 
 const { title, description, keywords, opDescription, opImage } = Astro.props;
+
+const homeRoutes = ["/", "/nosotros/", "/otra-ruta/"];
+const isHome = homeRoutes.includes(Astro.url.pathname);
+const color = isHome ? "home" : "primary";
 ---
 
 <!doctype html>
@@ -96,7 +101,7 @@ const { title, description, keywords, opDescription, opImage } = Astro.props;
     >
     <!-- End Google Tag Manager (noscript) -->
 
-    <PopupContactForm client:load />
+    <PopupContactForm client:load color={color} />
     <Toaster
       client:idle
       position="top-center"
@@ -107,18 +112,25 @@ const { title, description, keywords, opDescription, opImage } = Astro.props;
         duration: 6000,
       }}
     />
-    <Header />
+    <Header color={color} />
     <main>
       <slot />
     </main>
-    <ContactDetails />
-    <ContactForm client:visible />
-    <Footer />
+    <Today color={color} />
+    <ContactInfo color={color} />
+    <ContactForm client:visible color={color} />
+    <Footer color={color} />
     <WhatsAppFixed />
   </body>
 </html>
 
 <style is:global>
+  /* All supported classes for color props */
+
+  /* bg-home-dark hover:bg-home-dark md:bg-home md:hover:bg-home-dark 
+  md:hover:bg-home bg-primary-dark md:bg-primary md:hover:bg-primary-dark 
+  md:hover:bg-primary bg-home/95 */
+
   :root {
     --primary: #154142;
     --primary-light: #1c5c5e;
@@ -126,10 +138,13 @@ const { title, description, keywords, opDescription, opImage } = Astro.props;
     --primary-rgba: 21, 65, 66;
     --secondary: #b6a27a;
     --secondary-dark: #a38c5d;
+    --home: #0160a8;
+    --home-light: #218cdc;
+    --home-dark: #004c85;
   }
 
   ::selection {
-    background-color: #154142e0;
+    background-color: var(--home-light);
     color: white;
   }
 
@@ -141,6 +156,7 @@ const { title, description, keywords, opDescription, opImage } = Astro.props;
 
   body {
     text-wrap: pretty;
+    color: #444444;
   }
 
   p,
@@ -151,7 +167,6 @@ const { title, description, keywords, opDescription, opImage } = Astro.props;
   }
 
   label {
-    color: var(--primary);
     font-weight: 500;
     padding-bottom: 4px;
   }
@@ -178,6 +193,45 @@ const { title, description, keywords, opDescription, opImage } = Astro.props;
     transition: all 0.3s ease;
     &:hover {
       background-color: var(--primary-dark);
+      transform: scale(1.03);
+    }
+    &:active {
+      transform: scale(1);
+    }
+  }
+
+  .button-home {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+    background-color: var(--home);
+    padding: 12px 24px;
+    border-radius: 6px;
+    color: white;
+    transition: all 0.3s ease;
+    &:hover {
+      background-color: var(--home-dark);
+      transform: scale(1.03);
+    }
+    &:active {
+      transform: scale(1);
+    }
+  }
+
+  .button-home-secondary {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+    padding: 12px 24px;
+    border: 1px solid var(--home);
+    border-radius: 6px;
+    color: var(--home);
+    transition: all 0.3s ease;
+    &:hover {
+      background-color: var(--home);
+      color: white;
       transform: scale(1.03);
     }
     &:active {
@@ -298,12 +352,12 @@ const { title, description, keywords, opDescription, opImage } = Astro.props;
       width: 7px;
     }
     ::-webkit-scrollbar-thumb {
-      background: var(--secondary);
+      background: #aaaaaa;
       border-radius: 5px;
       cursor: pointer;
     }
     ::-webkit-scrollbar-thumb:hover {
-      background: var(--secondary-dark);
+      background: #999999;
     }
   }
 </style>

@@ -2,12 +2,18 @@
 import Phone from "@/icons/Phone";
 import WhatsApp from "@/icons/WhatsApp";
 import WhatsAppLink from "../common/WhatsAppLink.astro";
+
+interface Props {
+  color?: string;
+}
+
+const { color = "primary" } = Astro.props;
 ---
 
 <section class="mx-auto my-20 max-w-[1200px] px-6">
   <hr class="mb-20 border-slate-300" />
   <div class="flex flex-col items-center justify-center text-center">
-    <h2 class="mb-6 text-2xl font-semibold text-primary">
+    <h2 class={`mb-6 text-2xl font-semibold text-${color}`}>
       ¡Contáctenos hoy mismo!
     </h2>
     <p class="mb-4">
@@ -16,22 +22,24 @@ import WhatsAppLink from "../common/WhatsAppLink.astro";
     </p>
     <p class="mb-6">
       Escríbanos a través de <WhatsAppLink
-        class="relative font-medium text-primary after:absolute after:-bottom-0.5 after:left-0 after:h-0.5 after:w-0 after:bg-primary after:transition-all hover:after:w-full"
+        class={`font-medium text-${color} hover:underline`}
         >WhatsApp</WhatsAppLink
-      > o <a
+      > o
+      <a
         href="tel:+51924702290"
-        class="relative font-medium text-primary after:absolute after:-bottom-0.5 after:left-0 after:h-0.5 after:w-0 after:bg-primary after:transition-all hover:after:w-full"
-        >llámenos</a
+        class={`font-medium text-${color} hover:underline`}>llámenos</a
       > directamente <br class="hidden md:block" /> y de el primer paso hacia una
       vida llena de confort y naturaleza.
     </p>
     <div class="flex flex-col gap-3 md:flex-row">
-      <WhatsAppLink class="button-primary">
+      <WhatsAppLink class={`button-${color}`}>
         <WhatsApp className="size-6" />
         Escríbanos por WhatsApp
       </WhatsAppLink>
-      <!-- <a href="tel:+51924702290" class="button-secondary"> -->
-      <a href="tel:+51924702290" class="button-secondary">
+      <a
+        href="tel:+51924702290"
+        class={`${color === "primary" ? "button-secondary" : "button-home-secondary"}`}
+      >
         <Phone className="size-5" />
         Llámenos ahora</a
       >
